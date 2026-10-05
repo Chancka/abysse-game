@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Abysse</title>
+<meta name="description" content="Abysse : un action-RPG en pixel art, sombre et sans pression, à jouer sur ton téléphone. Version de test Android à télécharger.">
+<meta property="og:title" content="Abysse">
+<meta property="og:description" content="Un action-RPG en pixel art à jouer sur Android. Version de test entre amis.">
+<meta property="og:image" content="img/catacombes.jpg">
+<meta name="theme-color" content="#0d0c12">
+<link rel="icon" type="image/png" href="img/favicon.png">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@500;700&family=Atkinson+Hyperlegible:wght@400;700&display=swap">
+<style>
+/* One dark look, the game's own: night ink, bone text, brass for what you can press. A single column, the download first. */
+:root {
+  color-scheme: dark;
+  --night: #0d0c12; --stone: #17151f; --edge: #2c2836; --bone: #ece6d8; --ash: #a39e93; --brass: #d3a24a; --brass-deep: #8f6420; --ember: #e2683a;
+  --f-display: "Pixelify Sans", "Courier New", monospace;
+  --f-body: "Atkinson Hyperlegible", "Segoe UI", system-ui, sans-serif;
+}
+* { box-sizing: border-box; }
+img { max-width: 100%; height: auto; }
+html, body { margin: 0; }
+body { background: var(--night); color: var(--bone); font-family: var(--f-body); font-size: 17px; line-height: 1.6; }
+.page { max-width: 880px; margin: 0 auto; padding-inline: 16px; padding-block: calc(28px + env(safe-area-inset-top, 0px)) calc(48px + env(safe-area-inset-bottom, 0px)); display: grid; gap: 44px; }
+header { display: grid; gap: 18px; justify-items: start; }
+.brand { display: flex; align-items: center; gap: 16px; }
+.brand img { width: 72px; height: 72px; image-rendering: pixelated; border: 2px solid var(--edge); }
+h1 { font-family: var(--f-display); font-weight: 700; font-size: clamp(44px, 11vw, 76px); line-height: .95; margin: 0; letter-spacing: 1px; }
+.tag { font-size: clamp(18px, 3.4vw, 21px); color: var(--bone); max-width: 34ch; margin: 0; text-wrap: balance; }
+.hero-shot { width: 100%; border: 2px solid var(--edge); image-rendering: auto; display: block; }
+.dl { display: grid; gap: 10px; justify-items: start; }
+.btn { display: inline-flex; align-items: center; gap: 12px; background: var(--brass); color: #1a1206; font-family: var(--f-display); font-weight: 700; font-size: 22px; padding: 14px 22px; text-decoration: none; border: 2px solid #f1cf87; box-shadow: 0 4px 0 var(--brass-deep); }
+.btn:hover { background: #e2b45c; }
+.btn:active { transform: translateY(3px); box-shadow: 0 1px 0 var(--brass-deep); }
+.btn:focus-visible { outline: 3px solid var(--bone); outline-offset: 3px; }
+.btn svg { width: 22px; height: 22px; fill: currentColor; flex: none; }
+.meta { color: var(--ash); font-size: 15px; margin: 0; }
+h2 { font-family: var(--f-display); font-weight: 500; font-size: 26px; margin: 0 0 12px; color: var(--brass); }
+ol.steps { margin: 0; padding: 0; list-style: none; counter-reset: s; display: grid; gap: 14px; }
+ol.steps li { counter-increment: s; display: grid; grid-template-columns: 40px 1fr; gap: 12px; align-items: start; }
+ol.steps li::before { content: counter(s); font-family: var(--f-display); font-size: 22px; color: var(--night); background: var(--bone); width: 34px; height: 34px; display: grid; place-items: center; }
+ol.steps b { color: var(--bone); }
+.steps p { margin: 0; color: var(--ash); }
+.steps .lead { color: var(--bone); }
+.note { border-left: 3px solid var(--ember); padding: 6px 0 6px 14px; color: var(--ash); margin: 0; max-width: 68ch; }
+.shots { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; }
+figure { margin: 0; display: grid; gap: 6px; }
+figure img { width: 100%; border: 2px solid var(--edge); display: block; }
+figcaption { color: var(--ash); font-size: 14px; }
+.features { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 18px 28px; margin: 0; padding: 0; list-style: none; }
+.features li { color: var(--ash); }
+.features b { display: block; color: var(--bone); font-size: 18px; }
+footer { color: var(--ash); font-size: 14px; border-top: 1px solid var(--edge); padding-top: 18px; display: grid; gap: 6px; }
+@media (prefers-reduced-motion: reduce) { .btn:active { transform: none; } }
+</style>
+</head>
+<body>
+<main class="page">
+  <header>
+    <div class="brand">
+      <img src="img/icone.png" alt="L'icône du jeu&nbsp;: un chevalier devant la pleine lune" width="72" height="72">
+      <h1>Abysse</h1>
+    </div>
+    <p class="tag">Un action-RPG en pixel art, sombre et sans pression. Descends palier après palier, trouve l'objet qui change tout.</p>
+    <img class="hero-shot" src="img/catacombes.jpg" alt="Une Sorcière dans les Catacombes noyées, entre lanternes et champignons lumineux" width="1266" height="585">
+    <div class="dl">
+      <a class="btn" id="download" href="https://github.com/Chancka/abysse-game/releases/latest/download/abysse.apk">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11 3h2v10.17l3.59-3.58L18 11l-6 6-6-6 1.41-1.41L11 13.17zM5 19h14v2H5z"/></svg>
+        Télécharger pour Android
+      </a>
+      <p class="meta" id="meta">Version de test __VERSION__ · fichier APK de __SIZE__ · Android 7 ou plus récent</p>
+    </div>
+  </header>
+
+  <section aria-labelledby="t-install">
+    <h2 id="t-install">L'installer</h2>
+    <ol class="steps">
+      <li><div><p class="lead"><b>Télécharge le fichier</b> avec le bouton ci-dessus, depuis ton téléphone.</p></div></li>
+      <li><div><p class="lead"><b>Ouvre-le</b> une fois le téléchargement fini (notification, ou dossier «&nbsp;Téléchargements&nbsp;»).</p></div></li>
+      <li><div><p class="lead"><b>Autorise l'installation</b> si Android le demande.</p><p>Il s'agit de «&nbsp;Installer des applis inconnues&nbsp;» pour ton navigateur ou ton gestionnaire de fichiers. Tu pourras désactiver cette autorisation juste après.</p></div></li>
+      <li><div><p class="lead"><b>Installe quand même</b> si Play Protect affiche un avertissement.</p><p>Le jeu ne vient pas du Play Store, c'est une version de test entre amis&nbsp;: Android prévient pour toute application dans ce cas.</p></div></li>
+      <li><div><p class="lead"><b>Tourne ton téléphone en paysage</b> et lance la partie.</p></div></li>
+    </ol>
+  </section>
+
+  <section aria-labelledby="t-update">
+    <h2 id="t-update">Mettre à jour</h2>
+    <p class="note">Quand une nouvelle version sort, retélécharge le fichier depuis cette page et installe-le par-dessus&nbsp;: ta partie est gardée. Pas besoin de désinstaller.</p>
+  </section>
+
+  <section aria-labelledby="t-shots">
+    <h2 id="t-shots">À quoi ça ressemble</h2>
+    <div class="shots">
+      <figure><img src="img/fournaises.jpg" alt="Un Chevalier dans les Fournaises, entre coulées de lave et chariots de minerai" loading="lazy" width="1266" height="585"><figcaption>Les Fournaises, palier 36</figcaption></figure>
+      <figure><img src="img/cathedrale.jpg" alt="Un Traqueur dans la Cathédrale engloutie" loading="lazy" width="1266" height="585"><figcaption>La Cathédrale engloutie, palier 22</figcaption></figure>
+      <figure><img src="img/cryptes.jpg" alt="Un Chevalier dans les Cryptes de Morteveille" loading="lazy" width="1266" height="585"><figcaption>Les Cryptes, palier 3</figcaption></figure>
+    </div>
+  </section>
+
+  <section aria-labelledby="t-what">
+    <h2 id="t-what">Le jeu</h2>
+    <ul class="features">
+      <li><b>Trois classes</b>Le Chevalier, la Sorcière et le Traqueur, chacun avec ses variantes de sorts et un arbre de 208 nœuds.</li>
+      <li><b>Cinq biomes, des paliers sans fin</b>Des cryptes à l'abîme, avec un boss et sa salle tous les cinq paliers.</li>
+      <li><b>Le butin</b>Des centaines d'objets, des uniques à combiner, une forge jusqu'à +15. Et parfois un prodige, une chance sur des millions.</li>
+      <li><b>Sans pression</b>Pas de missions du jour, pas de minuteur, pas de publicité pendant une carte. Tu joues à ton rythme.</li>
+    </ul>
+  </section>
+
+  <footer>
+    <p style="margin:0">Version de test, partagée entre amis. Le jeu ne collecte rien&nbsp;: ta partie est enregistrée sur ton téléphone.</p>
+    <p style="margin:0">Pas encore disponible sur iPhone.</p>
+  </footer>
+</main>
+</body>
+</html>
