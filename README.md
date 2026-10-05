@@ -1,7 +1,7 @@
-# Abysse — version de test
+# Abysse — test build
 
-Page de téléchargement de la version de test Android d'Abysse, un action-RPG en pixel art.
+Download page for the Android test build of Abysse, a pixel-art action RPG.
 
-Site : https://chancka.github.io/abysse-game/
+Site: https://chancka.github.io/abysse-game/ — play in the browser: https://chancka.github.io/abysse-game/play/
 
-L'APK se trouve dans les [versions](https://github.com/Chancka/abysse-game/releases/latest).
+The APK is in the [releases](https://github.com/Chancka/abysse-game/releases/latest).
