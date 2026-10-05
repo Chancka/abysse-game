@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+  <meta name="theme-color" content="#0a0910">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <title></title>
+  <style>
+    :root { /* the safe area for the HTML layers (the canvas has its own: src/core/safe-area.js); Capacitor's variables first (old Android WebViews) */
+      --sa-top: var(--safe-area-inset-top, env(safe-area-inset-top, 0px));
+      --sa-bottom: var(--safe-area-inset-bottom, env(safe-area-inset-bottom, 0px));
+      --sa-side: max(var(--safe-area-inset-left, env(safe-area-inset-left, 0px)), var(--safe-area-inset-right, env(safe-area-inset-right, 0px)));
+    }
+    html, body {
+      margin: 0; padding: 0; height: 100%; overflow: hidden;
+      background: #0a0910; overscroll-behavior: none;
+    }
+    body {
+      position: fixed; inset: 0;
+      touch-action: none; user-select: none; -webkit-user-select: none;
+      -webkit-touch-callout: none; -webkit-tap-highlight-color: transparent;
+    }
+    #game {
+      position: absolute; left: 0; top: 0; display: block; touch-action: none;
+      image-rendering: crisp-edges; image-rendering: pixelated;
+    }
+    #overlay {
+      position: fixed; inset: 0; z-index: 10; box-sizing: border-box; padding: var(--sa-top) var(--sa-side) var(--sa-bottom);
+      display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.6em;
+      background: rgba(10, 9, 16, 0.78); color: #d8cfb8; text-align: center;
+      font-family: Georgia, 'Times New Roman', serif; cursor: pointer;
+    }
+    #overlay[hidden] { display: none; }
+    #overlay .title { font-size: clamp(22px, 6vmin, 44px); color: #b08a3e; letter-spacing: 0.04em; }
+    #overlay .sub { font-size: clamp(13px, 3vmin, 20px); opacity: 0.8; }
+    #overlay .note { font-size: clamp(11px, 2.6vmin, 15px); color: #e8836f; max-width: 90vw; }
+    #overlay .note[hidden] { display: none; }
+    #overlay button.action {
+      display: flex; flex-direction: column; gap: 0.3em; align-items: center; margin-top: 1.2em;
+      min-width: 12em; padding: 0.7em 1em; font: inherit; color: #d8cfb8; background: #16121e; cursor: pointer;
+      border: 2px solid #b08a3e; border-radius: 4px;
+    }
+    #overlay button.action[hidden] { display: none; }
+    #overlay button.action.second { margin-top: 0.2em; }
+    #overlay button.action.second .label { color: #d8cfb8; }
+    #overlay button.action .label { font-size: clamp(15px, 3.6vmin, 24px); color: #f2d25a; }
+    #overlay button.action .sub { font-size: clamp(11px, 2.6vmin, 15px); opacity: 0.8; }
+    #screen {
+      position: fixed; inset: 0; z-index: 12; box-sizing: border-box; padding: var(--sa-top) var(--sa-side) var(--sa-bottom);
+      display: flex; /* the box centres itself (margin: auto) and scrolls from its top when taller than the phone */
+      background: rgba(10, 9, 16, 0.8); color: #d8cfb8; text-align: center;
+      font-family: Georgia, 'Times New Roman', serif;
+      overflow-y: auto; touch-action: pan-y; /* a tall screen (the options) scrolls instead of being cut */
+    }
+    #screen[hidden] { display: none; }
+    #screen .box { display: flex; flex-direction: column; align-items: center; gap: 0.7em; padding: 1em; margin: auto; } /* centred when it fits, scrolled from its top when it does not */
+    #screen .title { font-size: clamp(22px, 6vmin, 44px); color: #b08a3e; }
+    #screen .line { font-size: clamp(13px, 3vmin, 20px); opacity: 0.85; }
+    #screen .buttons { display: flex; flex-wrap: wrap; gap: 0.8em; justify-content: center; margin-top: 0.4em; }
+    #screen button {
+      display: flex; flex-direction: column; gap: 0.3em; align-items: center;
+      min-width: 11em; max-width: 16em; padding: 0.8em 1em;
+      font: inherit; color: #d8cfb8; background: #16121e; cursor: pointer;
+      border: 2px solid #6b6880; border-radius: 4px;
+    }
+    #screen button:hover, #screen button:focus-visible { border-color: #b08a3e; outline: none; }
+    #screen button .label { font-size: clamp(15px, 3.6vmin, 24px); color: #f2d25a; }
+    #screen button .sub { font-size: clamp(11px, 2.6vmin, 15px); opacity: 0.8; }
+    #screen .line.bad { color: #ff7262; opacity: 1; }
+    /* Short screens (a phone held sideways): tighter, so that the options fit or scroll a little. */
+    @media (max-height: 340px) {
+      #screen .box { gap: 0.25em; padding: 0.3em; }
+      #screen .title { font-size: 18px; }
+      #screen .buttons { gap: 0.4em; margin-top: 0; }
+      #screen button { padding: 0.3em 0.7em; min-width: 9.5em; gap: 0.1em; }
+      #screen button .label { font-size: 14px; }
+      #screen button .sub { font-size: 10px; }
+    }
+    #screen textarea.savetext {
+      width: min(88vw, 44em); height: 32vh; resize: none; padding: 0.5em;
+      font: 11px/1.3 ui-monospace, Consolas, monospace; color: #d8cfb8; background: #0f0d16;
+      border: 2px solid #6b6880; border-radius: 4px; word-break: break-all;
+    }
+    #screen textarea.savetext:focus { border-color: #b08a3e; outline: none; }
+    #screen .volumes { display: flex; flex-direction: column; gap: 0.5em; width: min(86vw, 26em); }
+    #screen .volume {
+      display: grid; grid-template-columns: 7.5em 1fr 3.6em; align-items: center; gap: 0.7em;
+      font-size: clamp(13px, 3vmin, 20px); text-align: left;
+    }
+    #screen .volume .value { text-align: right; color: #f2d25a; }
+    #screen input[type=range] { width: 100%; accent-color: #b08a3e; height: 1.6em; margin: 0; touch-action: pan-x; }
+  </style>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Abysse">
+</head>
+<body>
+  <canvas id="game"></canvas>
+  <div id="overlay" hidden><div class="title"></div><div class="sub"></div></div>
+  <div id="screen" hidden></div>
+  <noscript>JavaScript est nécessaire pour jouer. JavaScript is required to play.</noscript>
+  <script type="module" src="main.js"></script>
+</body>
+</html>

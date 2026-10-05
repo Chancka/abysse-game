@@ -38,6 +38,8 @@ h1 { font-family: var(--f-display); font-weight: 700; font-size: clamp(44px, 11v
 .btn:hover { background: #e2b45c; }
 .btn:active { transform: translateY(3px); box-shadow: 0 1px 0 var(--brass-deep); }
 .btn:focus-visible { outline: 3px solid var(--bone); outline-offset: 3px; }
+.btn-alt { background: transparent; color: var(--bone); border-color: var(--edge); box-shadow: 0 4px 0 #000; font-size: 20px; margin-top: 8px; }
+.btn-alt:hover { background: var(--stone); }
 .btn svg { width: 22px; height: 22px; fill: currentColor; flex: none; }
 .meta { color: var(--ash); font-size: 15px; margin: 0; }
 h2 { font-family: var(--f-display); font-weight: 500; font-size: 26px; margin: 0 0 12px; color: var(--brass); }
@@ -73,7 +75,12 @@ footer { color: var(--ash); font-size: 14px; border-top: 1px solid var(--edge); 
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11 3h2v10.17l3.59-3.58L18 11l-6 6-6-6 1.41-1.41L11 13.17zM5 19h14v2H5z"/></svg>
         Télécharger pour Android
       </a>
-      <p class="meta" id="meta">Version de test __VERSION__ · fichier APK de __SIZE__ · Android 7 ou plus récent</p>
+      <p class="meta" id="meta">Version de test 0.1.0 · fichier APK de 16&nbsp;Mo · Android&nbsp;7 ou plus récent</p>
+      <a class="btn btn-alt" href="play/">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+        Jouer dans le navigateur
+      </a>
+      <p class="meta">iPhone, iPad, PC ou Android, sans rien installer.</p>
     </div>
   </header>
 
@@ -85,6 +92,15 @@ footer { color: var(--ash); font-size: 14px; border-top: 1px solid var(--edge); 
       <li><div><p class="lead"><b>Autorise l'installation</b> si Android le demande.</p><p>Il s'agit de «&nbsp;Installer des applis inconnues&nbsp;» pour ton navigateur ou ton gestionnaire de fichiers. Tu pourras désactiver cette autorisation juste après.</p></div></li>
       <li><div><p class="lead"><b>Installe quand même</b> si Play Protect affiche un avertissement.</p><p>Le jeu ne vient pas du Play Store, c'est une version de test entre amis&nbsp;: Android prévient pour toute application dans ce cas.</p></div></li>
       <li><div><p class="lead"><b>Tourne ton téléphone en paysage</b> et lance la partie.</p></div></li>
+    </ol>
+  </section>
+
+  <section aria-labelledby="t-iphone">
+    <h2 id="t-iphone">Sur iPhone</h2>
+    <ol class="steps">
+      <li><div><p class="lead"><b>Ouvre la page dans Safari</b> et touche «&nbsp;Jouer dans le navigateur&nbsp;».</p></div></li>
+      <li><div><p class="lead"><b>Touche le bouton Partager</b> (le carré avec une flèche vers le haut), puis «&nbsp;Sur l'écran d'accueil&nbsp;».</p></div></li>
+      <li><div><p class="lead"><b>Lance le jeu depuis son icône</b>, téléphone en paysage&nbsp;: il s'ouvre en plein écran, comme une application.</p><p>Ta partie est enregistrée sur ton iPhone. Pense à ne pas effacer les données de Safari, ou exporte ta sauvegarde depuis les Paramètres du jeu.</p></div></li>
     </ol>
   </section>
 
@@ -114,7 +130,7 @@ footer { color: var(--ash); font-size: 14px; border-top: 1px solid var(--edge); 
 
   <footer>
     <p style="margin:0">Version de test, partagée entre amis. Le jeu ne collecte rien&nbsp;: ta partie est enregistrée sur ton téléphone.</p>
-    <p style="margin:0">Pas encore disponible sur iPhone.</p>
+    <p style="margin:0">Pas encore d’application iPhone&nbsp;: sur iPhone, on joue dans le navigateur.</p>
   </footer>
 </main>
 </body>
