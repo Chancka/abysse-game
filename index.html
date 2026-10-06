@@ -58,6 +58,17 @@ figcaption { color: var(--ash); font-size: 14px; }
 .features li { color: var(--ash); }
 .features b { display: block; color: var(--bone); font-size: 18px; }
 footer { color: var(--ash); font-size: 14px; border-top: 1px solid var(--edge); padding-top: 18px; display: grid; gap: 6px; }
+.release { border: 2px solid var(--edge); background: var(--stone); padding: 0 16px; }
+.release + .release { margin-top: 10px; }
+.release summary { cursor: pointer; padding: 12px 0; display: flex; gap: 12px; align-items: baseline; flex-wrap: wrap; list-style-position: inside; }
+.release summary b { font-family: var(--f-display); font-weight: 500; font-size: 20px; color: var(--bone); }
+.release summary span { color: var(--ash); font-size: 15px; }
+.release summary:focus-visible { outline: 3px solid var(--bone); outline-offset: 3px; }
+.release .brief { margin: 0 0 6px; color: var(--bone); max-width: 68ch; }
+.release h4 { margin: 14px 0 6px; font-family: var(--f-display); font-weight: 500; font-size: 17px; color: var(--brass); }
+.release ul { margin: 0 0 14px; padding-left: 20px; display: grid; gap: 6px; color: var(--ash); }
+.release li { max-width: 72ch; }
+.fb { display: inline-block; font-size: 12px; line-height: 1; padding: 3px 6px; border: 1px solid var(--brass-deep); color: var(--brass); vertical-align: 1px; white-space: nowrap; }
 @media (prefers-reduced-motion: reduce) { .btn:active { transform: none; } }
 </style>
 </head>
@@ -75,7 +86,7 @@ footer { color: var(--ash); font-size: 14px; border-top: 1px solid var(--edge); 
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11 3h2v10.17l3.59-3.58L18 11l-6 6-6-6 1.41-1.41L11 13.17zM5 19h14v2H5z"/></svg>
         Télécharger pour Android
       </a>
-      <p class="meta" id="meta">Version de test 0.2.0 · fichier APK de 16&nbsp;Mo · Android&nbsp;7 ou plus récent</p>
+      <p class="meta" id="meta">Version de test 0.3.0 · fichier APK de 16&nbsp;Mo · Android&nbsp;7 ou plus récent</p>
       <a class="btn btn-alt" href="play/">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
         Jouer dans le navigateur
@@ -83,6 +94,7 @@ footer { color: var(--ash); font-size: 14px; border-top: 1px solid var(--edge); 
       <p class="meta">iPhone, iPad, PC ou Android, sans rien installer.</p>
     </div>
   </header>
+
 
   <section aria-labelledby="t-install">
     <h2 id="t-install">L'installer</h2>
@@ -108,6 +120,66 @@ footer { color: var(--ash); font-size: 14px; border-top: 1px solid var(--edge); 
     <h2 id="t-update">Mettre à jour</h2>
     <p class="note">Quand une nouvelle version sort, retélécharge le fichier depuis cette page et installe-le par-dessus&nbsp;: ta partie est gardée. Pas besoin de désinstaller.</p>
   </section>
+
+  <!-- notes:start -->
+<section aria-labelledby="t-notes">
+<h2 id="t-notes">Notes de version</h2>
+<details class="release" open>
+<summary><b>Version 0.3.0</b> <span>7 octobre 2026</span></summary>
+<p class="brief">Vos retours sont passés par là. Une interface plus grande et plus lisible, des cartes avec moins d’allers-retours, et c’est toi qui choisis ton équipement à partir du niveau 10.</p>
+<h4>Nouveautés</h4>
+<ul>
+<li>Réglage « Taille de l’interface » : le sac, les compétences, la forge, le marchand, l’atlas et les autres écrans s’affichent en plus grand. <span class="fb">retour joueur</span></li>
+<li>« Continuer à explorer » à la fin d’une carte : un portail touché trop tôt ne te fait plus perdre la fin de la carte. <span class="fb">retour joueur</span></li>
+<li>La grande carte se fait glisser au doigt ou à la souris, et se zoome (molette, pincement, boutons + et −). <span class="fb">retour joueur</span></li>
+<li>Onglet « Commandes » dans les Paramètres, et sur PC la lettre de la touche s’affiche sur les boutons. <span class="fb">retour joueur</span></li>
+<li>Imprégnation au choix à l’autel : 3 Pierres d’imprégnation pour choisir l’élément de ton arme (1 pierre pour un élément au hasard).</li>
+<li>Le nom d’une arme suit son élément : un Bâton de cendre est en feu, un Bâton de givre en froid, un Bâton d’orage en foudre… <span class="fb">retour joueur</span></li>
+</ul>
+<h4>Changements</h4>
+<ul>
+<li>Équipement automatique seulement jusqu’au niveau 10, ensuite c’est toi qui choisis (réglable : Au début, Toujours, Jamais). <span class="fb">retour joueur</span></li>
+<li>La flèche verte s’affiche dès que le chiffre de puissance monte, comme sur la fiche de l’objet. <span class="fb">retour joueur</span></li>
+<li>Fiches d’objets : la rareté écrite sous le nom (Magique, Rare, Unique), et les lignes de feu, de froid, de foudre et d’ombre avec leur icône et leur couleur. <span class="fb">retour joueur</span></li>
+<li>Partout des « +N % » : plus de mélange avec des « ×2 ». <span class="fb">retour joueur</span></li>
+<li>Fiches de sorts : l’élément en tête des dégâts, et une ligne qui dit si tes bonus d’élément s’appliquent. <span class="fb">retour joueur</span></li>
+<li>Les vitesses expliquées : attaque et incantation accélèrent l’attaque de base, la recharge accélère les compétences. <span class="fb">retour joueur</span></li>
+<li>Cartes avec plus de boucles et moins d’impasses : environ deux fois moins de chemin refait. <span class="fb">retour joueur</span></li>
+<li>Refuge : un vrai bouton « Sac », à côté de Compétences, Arbre et Missions. <span class="fb">retour joueur</span></li>
+<li>Le pourcentage d’expérience s’affiche à côté du niveau, et les chiffres exacts dans la fiche du personnage. <span class="fb">retour joueur</span></li>
+</ul>
+<h4>Corrections</h4>
+<ul>
+<li>Une orbe comparée à côté d’un bâton à deux mains affichait un gain impossible. <span class="fb">retour joueur</span></li>
+<li>Sur Android, le clavier rapetissait le jeu en écrivant son nom. <span class="fb">retour joueur</span></li>
+<li>Sur Android, la barre de notification (heure, wifi) revenait pendant la partie. <span class="fb">retour joueur</span></li>
+</ul>
+</details>
+<details class="release">
+<summary><b>Version 0.2.0</b> <span>5 octobre 2026</span></summary>
+<p class="brief">Les auras arrivent. Réserve une part de ton Mana ou de ta vie contre un effet permanent.</p>
+<h4>Nouveautés</h4>
+<ul>
+<li>12 auras et jusqu’à 4 emplacements, dont le Pacte inversé qui réserve la vie à la place du Mana.</li>
+<li>Six uniques pensés pour les auras, et de nouvelles propriétés de Mana et d’efficacité de réservation.</li>
+<li>Les icônes des auras portées sous les barres de vie et de Mana.</li>
+</ul>
+<h4>Changements</h4>
+<ul>
+<li>Le coût en Mana des compétences grandit avec leur niveau.</li>
+<li>Rage froide adoucie : 40 % de la vie gardée, +5 % de dégâts.</li>
+</ul>
+</details>
+<details class="release">
+<summary><b>Version 0.1.0</b> <span>5 octobre 2026</span></summary>
+<p class="brief">La première version de test entre amis, sur Android et dans le navigateur.</p>
+<h4>Nouveautés</h4>
+<ul>
+<li>Trois classes (Chevalier, Sorcière, Traqueur), cinq biomes, des paliers sans fin, des boss avec leur salle, et des centaines d’objets.</li>
+</ul>
+</details>
+</section>
+<!-- notes:end -->
 
   <section aria-labelledby="t-shots">
     <h2 id="t-shots">À quoi ça ressemble</h2>
