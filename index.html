@@ -86,7 +86,7 @@ footer { color: var(--ash); font-size: 14px; border-top: 1px solid var(--edge); 
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11 3h2v10.17l3.59-3.58L18 11l-6 6-6-6 1.41-1.41L11 13.17zM5 19h14v2H5z"/></svg>
         Télécharger pour Android
       </a>
-      <p class="meta" id="meta">Version de test 0.3.0 · fichier APK de 16&nbsp;Mo · Android&nbsp;7 ou plus récent</p>
+      <p class="meta" id="meta">Version de test 0.4.0 · fichier APK de 16&nbsp;Mo · Android&nbsp;7 ou plus récent</p>
       <a class="btn btn-alt" href="play/">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
         Jouer dans le navigateur
@@ -125,6 +125,28 @@ footer { color: var(--ash); font-size: 14px; border-top: 1px solid var(--edge); 
 <section aria-labelledby="t-notes">
 <h2 id="t-notes">Notes de version</h2>
 <details class="release" open>
+<summary><b>Version 0.4.0</b> <span>9 octobre 2026</span></summary>
+<p class="brief">Un petit cadeau t’attend au Refuge quand tu reviens, la marche est plus égale dans toutes les directions, et plusieurs bugs que vous avez remontés sont corrigés (dont les flashs noirs dans les menus).</p>
+<h4>Nouveautés</h4>
+<ul>
+<li>Cadeau du retour : quand tu reviens après une pause (20 heures ou plus), un colis t’attend au Refuge devant l’Atlas, avec un peu d’or, de la poussière d’âme et un objet mystère à ta taille. Jusqu’à 3 colis peuvent attendre, rien ne se perd si tu tardes, et aucun décompte ne s’affiche. <span class="fb">retour joueur</span></li>
+<li>Au Refuge, le sac a un bouton « Forge » sous la fiche d’un objet : il ouvre la forge avec cet objet déjà sur l’enclume, et le sac revient quand tu la fermes. <span class="fb">retour joueur</span></li>
+</ul>
+<h4>Changements</h4>
+<ul>
+<li>Les flèches des cases du sac se lisent mieux : elles se posent sur une petite plaque sombre, et la flèche des uniques prometteurs est maintenant blanche (le jaune ne dit plus que la rareté). <span class="fb">retour joueur</span></li>
+<li>La marche est compensée pour la vue en perspective : sur l’écran, aller sur le côté n’est plus deux fois plus rapide qu’aller vers le haut ou le bas, mais environ 1,4 fois (la vitesse moyenne ne change pas). Les pas suivent la vitesse vue à l’écran. <span class="fb">retour joueur</span></li>
+</ul>
+<h4>Corrections</h4>
+<ul>
+<li>Des éclairs noirs passaient dans les menus (compétences, arbre, sac…) à peu près une fois par seconde sur certains téléphones. <span class="fb">retour joueur</span></li>
+<li>Dans le sac, le « +xxx » de puissance qui s’affiche à côté du chiffre passait derrière les objets : il reste maintenant dans sa colonne. <span class="fb">retour joueur</span></li>
+<li>À la forge, les valeurs « avant → après » ne se suivaient pas d’un niveau à l’autre (« 5 → 6 » puis « 4,3 → 4,8 ») : une ligne garde maintenant le même nombre de décimales à tous les niveaux, comme sur la fiche de l’objet. <span class="fb">retour joueur</span></li>
+<li>La mini-carte montre maintenant l’eau profonde et la lave comme de l’eau et de la lave, avec leur rivage (les douves de la Mère noyée apparaissaient comme du sol). <span class="fb">retour joueur</span></li>
+<li>Le Bond écrasant du Chevalier pouvait, rarement, passer au travers du coin d’un mur.</li>
+</ul>
+</details>
+<details class="release">
 <summary><b>Version 0.3.0</b> <span>7 octobre 2026</span></summary>
 <p class="brief">Vos retours sont passés par là. Une interface plus grande et plus lisible, des cartes avec moins d’allers-retours, et c’est toi qui choisis ton équipement à partir du niveau 10.</p>
 <h4>Nouveautés</h4>
