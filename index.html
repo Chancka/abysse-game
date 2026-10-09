@@ -86,7 +86,7 @@ footer { color: var(--ash); font-size: 14px; border-top: 1px solid var(--edge); 
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11 3h2v10.17l3.59-3.58L18 11l-6 6-6-6 1.41-1.41L11 13.17zM5 19h14v2H5z"/></svg>
         Télécharger pour Android
       </a>
-      <p class="meta" id="meta">Version de test 0.4.0 · fichier APK de 16&nbsp;Mo · Android&nbsp;7 ou plus récent</p>
+      <p class="meta" id="meta">Version de test 0.5.0 · fichier APK de 16&nbsp;Mo · Android&nbsp;7 ou plus récent</p>
       <a class="btn btn-alt" href="play/">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
         Jouer dans le navigateur
@@ -125,6 +125,26 @@ footer { color: var(--ash); font-size: 14px; border-top: 1px solid var(--edge); 
 <section aria-labelledby="t-notes">
 <h2 id="t-notes">Notes de version</h2>
 <details class="release" open>
+<summary><b>Version 0.5.0</b> <span>9 octobre 2026</span></summary>
+<p class="brief">Tu peux maintenant me signaler un problème directement depuis le jeu, ta vie et ta ressource s’affichent au-dessus de ton héros, « Tout défaire » se trouve dans l’arbre, et le son ne se dégrade plus après de longues sessions.</p>
+<h4>Nouveautés</h4>
+<ul>
+<li>Paramètres, onglet Sauvegarde : « Signaler un problème » prépare un petit rapport (version, appareil, fluidité, dernières cartes, erreurs). Écris ce qui s’est passé et touche « Envoyer » : il m’arrive directement. Sans connexion, tu peux toujours le copier et me l’envoyer comme tu veux. Rien ne part sans que tu touches « Envoyer ». Le rapport est effacé au plus tard 6 mois après avoir été lu. « Revoir les astuces » et « Tout marquer comme vu » passent dans l’onglet Jeu.</li>
+<li>En carte, ta vie et ta ressource (Rage, Mana ou Endurance) s’affichent en petit au-dessus de ton héros, pendant les combats et quand il te manque quelque chose. Réglage dans Paramètres, nouvel onglet Combat : Auto, Toujours ou Jamais. Les chiffres de dégâts, le compteur de série, les secousses et les flashs y sont rangés aussi.</li>
+</ul>
+<h4>Changements</h4>
+<ul>
+<li>Défaire son arbre de compétences se fait maintenant depuis l’arbre : bouton « Tout défaire » en bas à gauche, gratuit jusqu’au niveau 30, puis payant en or (le prix s’affiche avant de confirmer). L’arbre d’atlas suit la même règle. Le marchand n’a plus d’onglet « Oubli ».</li>
+<li>Au Refuge, sur les écrans peu hauts (la plupart des téléphones, un PC en 1080p), la cour remonte un peu : le feu, les tonneaux, le coffre et les bêtes qui s’y promènent ne passent plus sous les boutons du bas.</li>
+</ul>
+<h4>Corrections</h4>
+<ul>
+<li>« À propos » affiche enfin le bon numéro de version (il disait 0.1.0).</li>
+<li>Après de longues sessions, le son pouvait se dégrader : chaque changement de lieu gardait en mémoire l’ancien écho (environ 23 Mo), jusqu’à plusieurs Go au bout de quelques heures. <span class="fb">retour joueur</span></li>
+<li>Les pulsations des auras sonnaient beaucoup trop fort (jusqu’à 29 dB au-dessus de leur niveau prévu) et couvraient la musique en combat. <span class="fb">retour joueur</span></li>
+</ul>
+</details>
+<details class="release">
 <summary><b>Version 0.4.0</b> <span>9 octobre 2026</span></summary>
 <p class="brief">Un petit cadeau t’attend au Refuge quand tu reviens, la marche est plus égale dans toutes les directions, et plusieurs bugs que vous avez remontés sont corrigés (dont les flashs noirs dans les menus).</p>
 <h4>Nouveautés</h4>
