@@ -86,7 +86,7 @@ footer { color: var(--ash); font-size: 14px; border-top: 1px solid var(--edge); 
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11 3h2v10.17l3.59-3.58L18 11l-6 6-6-6 1.41-1.41L11 13.17zM5 19h14v2H5z"/></svg>
         Télécharger pour Android
       </a>
-      <p class="meta" id="meta">Version de test 0.6.0 · fichier APK de 16&nbsp;Mo · Android&nbsp;7 ou plus récent</p>
+      <p class="meta" id="meta">Version de test 0.7.0 · fichier APK de 16&nbsp;Mo · Android&nbsp;7 ou plus récent</p>
       <a class="btn btn-alt" href="play/">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
         Jouer dans le navigateur
@@ -125,6 +125,20 @@ footer { color: var(--ash); font-size: 14px; border-top: 1px solid var(--edge); 
 <section aria-labelledby="t-notes">
 <h2 id="t-notes">Notes de version</h2>
 <details class="release" open>
+<summary><b>Version 0.7.0</b> <span>10 octobre 2026</span></summary>
+<p class="brief">Plus de bouton « Valider » dans les arbres : un point alloué compte tout de suite, et tu peux l’annuler tant que l’arbre est ouvert. Le bouton « Descendre » propose le bon palier après chaque carte, avec des flèches pour en changer. Et ton familier ne boucle plus quand ton sac est plein.</p>
+<h4>Changements</h4>
+<ul>
+<li>Dans l’arbre de compétences et dans l’arbre d’atlas, « Allouer » prend le chemin tout de suite : il n’y a plus de bouton « Valider ». Tes statistiques changent aussitôt et la partie est sauvegardée. Tant que tu gardes l’arbre ouvert, « Annuler (N) » en bas à droite rend le dernier chemin posé (le choix d’un nœud « Au choix » aussi), gratuitement, autant de fois que tu as alloué ; un nœud posé pendant la visite peut aussi se retirer seul avec « Retirer ». Ce que tu avais placé avant d’ouvrir l’arbre ne se reprend pas ainsi : c’est « Tout défaire » (gratuit jusqu’au niveau 30). <span class="fb">retour joueur</span></li>
+<li>Deux petits boutons ← et → à côté de « Descendre » changent le palier de la prochaine carte d’un cran (les flèches du clavier aussi). Un palier choisi à l’Atlas ou avec ces boutons reste jusqu’à la fin de la prochaine carte. <span class="fb">retour joueur</span></li>
+</ul>
+<h4>Corrections</h4>
+<ul>
+<li>Avec le sac plein, ton familier se remettait à courir après chaque objet tombé et « Inventaire plein » revenait en boucle toutes les 3 secondes : il laisse maintenant l’objet où il est, jusqu’à ce qu’une place se libère, et le message n’est dit qu’une fois (puis seulement quand le sac a eu de la place entre-temps, ou après 30 secondes). Les ressources (la bourse) sont toujours ramassées. <span class="fb">retour joueur</span></li>
+<li>Le bouton « Descendre » du Refuge gardait un ancien palier : après avoir enchaîné plusieurs cartes, il pouvait te proposer un palier déjà dépassé. Maintenant, à la fin de chaque carte, il te propose le palier suivant si tu poussais ton palier le plus profond, le même palier si tu en farmais un plus bas ou si tu es mort, et le palier conseillé pour te renforcer si un boss t’a battu. <span class="fb">retour joueur</span></li>
+</ul>
+</details>
+<details class="release">
 <summary><b>Version 0.6.0</b> <span>10 octobre 2026</span></summary>
 <p class="brief">La forge change : ce sont maintenant les emplacements de ton héros qui s’améliorent, jusqu’à +30, et changer d’équipement ne fait plus rien perdre. Les ceintures ont trois familles au choix. Ta sauvegarde est convertie sans rien perdre, et le reste t’est remboursé.</p>
 <h4>Nouveautés</h4>
