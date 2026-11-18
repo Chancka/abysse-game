@@ -4,10 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Abysse</title>
-<meta name="description" content="Abysse : un action-RPG en pixel art, sombre et sans pression, à jouer sur ton téléphone. Version de test Android à télécharger.">
+<meta name="description" content="Abysse : un action-RPG en pixel art, sombre et sans pression. Version 0.8.0 de test entre amis, pour Android et Windows.">
 <meta property="og:title" content="Abysse">
-<meta property="og:description" content="Un action-RPG en pixel art à jouer sur Android. Version de test entre amis.">
-<meta property="og:image" content="img/catacombes.jpg">
+<meta property="og:description" content="Un action-RPG en pixel art, sombre et sans pression. Version de test entre amis, pour Android et Windows.">
 <meta name="theme-color" content="#0d0c12">
 <link rel="icon" type="image/png" href="img/favicon.png">
 <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
@@ -62,6 +61,7 @@ footer { color: var(--ash); font-size: 14px; border-top: 1px solid var(--edge); 
 .release + .release { margin-top: 10px; }
 .release summary { cursor: pointer; padding: 12px 0; display: flex; gap: 12px; align-items: baseline; flex-wrap: wrap; list-style-position: inside; }
 .release summary b { font-family: var(--f-display); font-weight: 500; font-size: 20px; color: var(--bone); }
+.release summary h3 { margin: 0; font: inherit; } /* the current version's title is a real heading: no level is skipped between "Notes de version" and its sections */
 .release summary span { color: var(--ash); font-size: 15px; }
 .release summary:focus-visible { outline: 3px solid var(--bone); outline-offset: 3px; }
 .release .brief { margin: 0 0 6px; color: var(--bone); max-width: 68ch; }
@@ -70,6 +70,15 @@ footer { color: var(--ash); font-size: 14px; border-top: 1px solid var(--edge); 
 .release li { max-width: 72ch; }
 .fb { display: inline-block; font-size: 12px; line-height: 1; padding: 3px 6px; border: 1px solid var(--brass-deep); color: var(--brass); vertical-align: 1px; white-space: nowrap; }
 @media (prefers-reduced-motion: reduce) { .btn:active { transform: none; } }
+.hash { font-family: ui-monospace, Consolas, "Courier New", monospace; font-size: 14px; color: var(--bone); overflow-wrap: anywhere; margin: 0; }
+pre { margin: 0; padding: 10px 14px; background: var(--stone); border: 2px solid var(--edge); color: var(--bone); font-family: ui-monospace, Consolas, "Courier New", monospace; font-size: 14px; overflow-x: auto; max-width: 100%; }
+.files { display: grid; gap: 28px; }
+.file { display: grid; gap: 8px; justify-items: start; }
+.file h3 { margin: 0; font-family: var(--f-display); font-weight: 500; font-size: 20px; }
+.todo, .release summary span.todo { background: #3a2a10; color: #f1cf87; padding: 0 4px; border: 1px dashed var(--brass-deep); } /* (the second selector: a placeholder in a version's title keeps its own colour, not the grey of the date) */
+a { color: var(--brass); }
+code { font-family: ui-monospace, Consolas, "Courier New", monospace; color: var(--brass); }
+section p { max-width: 68ch; }
 </style>
 </head>
 <body>
@@ -80,51 +89,210 @@ footer { color: var(--ash); font-size: 14px; border-top: 1px solid var(--edge); 
       <h1>Abysse</h1>
     </div>
     <p class="tag">Un action-RPG en pixel art, sombre et sans pression. Descends palier après palier, trouve l'objet qui change tout.</p>
-    <img class="hero-shot" src="img/catacombes.jpg" alt="Une Sorcière dans les Catacombes noyées, entre lanternes et champignons lumineux" width="1266" height="585">
-    <div class="dl">
-      <a class="btn" id="download" href="https://github.com/Chancka/abysse-game/releases/latest/download/abysse.apk">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11 3h2v10.17l3.59-3.58L18 11l-6 6-6-6 1.41-1.41L11 13.17zM5 19h14v2H5z"/></svg>
-        Télécharger pour Android
-      </a>
-      <p class="meta" id="meta">Version de test 0.7.0 · fichier APK de 16&nbsp;Mo · Android&nbsp;7 ou plus récent</p>
-      <a class="btn btn-alt" href="play/">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
-        Jouer dans le navigateur
-      </a>
-      <p class="meta">iPhone, iPad, PC ou Android, sans rien installer.</p>
-    </div>
+    <p class="meta">Version de test 0.8.0 · <span>19 novembre 2026</span> · Android 8 ou plus récent (téléphone 64&nbsp;bits) · Windows</p>
   </header>
 
+  <section aria-labelledby="t-dl">
+    <h2 id="t-dl">Télécharger</h2>
+    <div class="files">
+      <div class="file">
+        <h3>Android</h3>
+        <a class="btn" id="download" href="https://github.com/Chancka/abysse-game/releases/latest/download/abysse.apk">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11 3h2v10.17l3.59-3.58L18 11l-6 6-6-6 1.41-1.41L11 13.17zM5 19h14v2H5z"/></svg>
+          Télécharger pour Android
+        </a>
+        <p class="meta">Fichier APK de 105&nbsp;Mo · build 8</p>
+        <p class="meta">Empreinte SHA-256 de l'APK&nbsp;:</p>
+        <p class="hash">86904f20933d69c2782fa5f23aec405a3d736689db43515b72bae9fae10dea85</p>
+      </div>
+      <div class="file">
+        <h3>Windows</h3>
+        <a class="btn" id="download-windows" href="https://github.com/Chancka/abysse-game/releases/latest/download/abysse-windows.zip">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11 3h2v10.17l3.59-3.58L18 11l-6 6-6-6 1.41-1.41L11 13.17zM5 19h14v2H5z"/></svg>
+          Télécharger pour Windows
+        </a>
+        <p class="meta">Archive ZIP de 111&nbsp;Mo · Windows 64&nbsp;bits</p>
+        <p class="meta">Empreinte SHA-256 de l'archive&nbsp;:</p>
+        <p class="hash">37c84cc6e1273da123c5c53c7522ed446464c9026ded1c172dade0b8da0634b8</p>
+      </div>
+      <p class="note">Les empreintes servent à vérifier que le fichier est bien celui de Charly et qu'il n'a pas été abîmé ou changé. Je te les redis aussi dans un message&nbsp;: si elles diffèrent, ne lance pas le jeu. Comment vérifier&nbsp;: <a href="#t-hash">plus bas</a>.</p>
+    </div>
+  </section>
+
+  <section aria-labelledby="t-shots">
+    <h2 id="t-shots">À quoi ça ressemble</h2>
+    <div class="shots">
+      <figure><img src="img/capture-cryptes.png" width="1280" height="720" loading="lazy" alt="Le Chevalier frappe une goule dans les Cryptes, entre des cierges et des tombeaux ; une meute de squelettes arrive, et le nom d'un bouclier tombé s'affiche au sol."><figcaption class="meta">Le Chevalier, dans les Cryptes</figcaption></figure>
+      <figure><img src="img/capture-eveque.png" width="1280" height="720" loading="lazy" alt="La Sorcière face à des spectres dans une salle bleutée, sous la statue de l'Évêque de pierre, un gardien."><figcaption class="meta">La Sorcière, chez l'Évêque de pierre</figcaption></figure>
+      <figure><img src="img/capture-fournaises.png" width="1280" height="720" loading="lazy" alt="Le Traqueur dans les Fournaises, entre des fours allumés, de la lave et un coffre."><figcaption class="meta">Le Traqueur, dans les Fournaises</figcaption></figure>
+    </div>
+  </section>
+
+  <section aria-labelledby="t-update">
+    <h2 id="t-update">Tu as déjà la 0.7.0 sur Android&nbsp;?</h2>
+    <p class="note"><b>Ne la désinstalle pas.</b> La 0.8.0 s'installe par-dessus&nbsp;: c'est la même application et la même signature. Au premier lancement, elle trouve ta partie de la 0.7.0 toute seule et reprend tes personnages. Si tu désinstalles d'abord, ta partie part avec l'ancienne application.</p>
+    <ol class="steps" style="margin-top:14px">
+      <li><div><p class="lead"><b>Par prudence, exporte ta partie</b> dans la 0.7.0&nbsp;: Options, «&nbsp;Exporter&nbsp;», et garde le texte quelque part (un message à toi-même).</p><p>Si tu n'as pas joué depuis longtemps, joue une carte dans la 0.7.0 avant de mettre à jour&nbsp;: seule une partie à jour est reprise.</p></div></li>
+      <li><div><p class="lead"><b>Installe la 0.8.0 par-dessus</b> (les étapes sont juste en dessous).</p></div></li>
+      <li><div><p class="lead"><b>Ouvre le jeu</b>&nbsp;: tes personnages sont là, et le Refuge te dit ce qui a été repris.</p></div></li>
+      <li><div><p class="lead"><b>S'ils n'y sont pas</b>&nbsp;: Paramètres, onglet Sauvegarde, «&nbsp;Importer une sauvegarde&nbsp;», et colle le texte de l'étape 1.</p></div></li>
+    </ol>
+    <p class="note" style="margin-top:14px">Sur PC, ou si tu jouais dans le navigateur (téléphone compris)&nbsp;: la reprise n'est pas automatique. Exporte ta partie dans la <a href="play/">version du navigateur</a> (Options, «&nbsp;Exporter&nbsp;»), puis colle-la dans la 0.8.0 (Paramètres, onglet Sauvegarde, «&nbsp;Importer une sauvegarde&nbsp;»).</p>
+  </section>
 
   <section aria-labelledby="t-install">
-    <h2 id="t-install">L'installer</h2>
+    <h2 id="t-install">Installer sur Android</h2>
     <ol class="steps">
       <li><div><p class="lead"><b>Télécharge le fichier</b> avec le bouton ci-dessus, depuis ton téléphone.</p></div></li>
       <li><div><p class="lead"><b>Ouvre-le</b> une fois le téléchargement fini (notification, ou dossier «&nbsp;Téléchargements&nbsp;»).</p></div></li>
       <li><div><p class="lead"><b>Autorise l'installation</b> si Android le demande.</p><p>Il s'agit de «&nbsp;Installer des applis inconnues&nbsp;» pour ton navigateur ou ton gestionnaire de fichiers. Tu pourras désactiver cette autorisation juste après.</p></div></li>
       <li><div><p class="lead"><b>Installe quand même</b> si Play Protect affiche un avertissement.</p><p>Le jeu ne vient pas du Play Store, c'est une version de test entre amis&nbsp;: Android prévient pour toute application dans ce cas.</p></div></li>
+      <li><div><p class="lead"><b>Si Android propose «&nbsp;Mettre à jour&nbsp;»</b>, c'est bon signe&nbsp;: tu installes bien par-dessus la 0.7.0. S'il refuse ou parle d'un conflit, n'efface rien&nbsp;: écris à Charly.</p></div></li>
       <li><div><p class="lead"><b>Tourne ton téléphone en paysage</b> et lance la partie.</p></div></li>
     </ol>
+    <p class="note" style="margin-top:14px">Le jeu demande Android 8 ou plus récent et un téléphone 64&nbsp;bits (la plupart des téléphones depuis 2017). Un téléphone d'entrée de gamme à système 32&nbsp;bits ne pourra pas l'installer.</p>
+  </section>
+
+  <section aria-labelledby="t-windows">
+    <h2 id="t-windows">Installer sur Windows</h2>
+    <ol class="steps">
+      <li><div><p class="lead"><b>Télécharge l'archive</b> avec le bouton «&nbsp;Windows&nbsp;» et <a href="#t-hash">vérifie son empreinte</a>.</p></div></li>
+      <li><div><p class="lead"><b>Décompresse-la</b> dans un dossier à toi&nbsp;: clic droit, «&nbsp;Extraire tout…&nbsp;». Ne lance pas le jeu depuis l'intérieur du ZIP.</p></div></li>
+      <li><div><p class="lead"><b>Lance <code>Abysse.exe</code></b> (dans le dossier décompressé).</p></div></li>
+      <li><div><p class="lead"><b>Si Windows affiche «&nbsp;Windows a protégé votre ordinateur&nbsp;»</b> (SmartScreen, «&nbsp;éditeur inconnu&nbsp;»)&nbsp;: touche «&nbsp;Informations complémentaires&nbsp;», puis «&nbsp;Exécuter quand même&nbsp;».</p><p>Le jeu n'est pas signé&nbsp;: un certificat d'éditeur est payant, et Windows prévient pour tout programme non signé. C'est pour cela que l'empreinte est donnée ci-dessus&nbsp;: si elle est la bonne, le fichier est celui de Charly.</p></div></li>
+      <li><div><p class="lead"><b>Ta partie</b> est enregistrée dans <code>%LOCALAPPDATA%\fr.abysse.app\saves</code>. Pour la remettre à zéro ou la déplacer, exporte-la depuis les Paramètres.</p></div></li>
+    </ol>
+    <p class="note" style="margin-top:14px">Tu peux jouer à la souris et au clavier, ou à la manette.</p>
+  </section>
+
+  <section aria-labelledby="t-hash">
+    <h2 id="t-hash">Vérifier le fichier téléchargé</h2>
+    <p style="max-width:68ch;color:var(--ash)">Sur Windows, dans PowerShell (remplace le chemin par celui de ton fichier)&nbsp;:</p>
+    <pre>Get-FileHash -Algorithm SHA256 $HOME\Downloads\abysse-windows.zip</pre>
+    <p style="max-width:68ch;color:var(--ash);margin-top:10px">Ou dans l'invite de commandes&nbsp;:</p>
+    <pre>certutil -hashfile %USERPROFILE%\Downloads\abysse-windows.zip SHA256</pre>
+    <p style="max-width:68ch;color:var(--ash);margin-top:10px">Compare la suite de chiffres et de lettres avec celle de la page (les majuscules ne comptent pas). Pour l'APK, fais la même chose depuis un PC avec le fichier <code>abysse.apk</code>, avant de le copier sur ton téléphone. Si l'empreinte diffère, ne l'installe pas et ne le lance pas&nbsp;: retélécharge-le, et préviens Charly si ça recommence.</p>
+  </section>
+
+  <section aria-labelledby="t-browser">
+    <h2 id="t-browser">La version du navigateur</h2>
+    <p class="note">La 0.8.0 ne se joue pas dans le navigateur. La <a href="play/">version du navigateur</a> reste en ligne pour l'instant, mais c'est l'<b>ancienne 0.7.0</b>, figée&nbsp;: elle ne recevra plus rien, et sa partie est séparée de celle de la 0.8.0. Utilise-la surtout pour exporter ta partie.</p>
+    <div id="saved" hidden>
+      <p class="lead">Une partie jouée dans ce navigateur est gardée sur cet appareil. Tu peux l'emporter dans la 0.8.0&nbsp;:</p>
+      <p><button type="button" class="btn btn-alt" id="save-copy">Copier ma partie</button> <button type="button" class="btn btn-alt" id="save-file">Télécharger le fichier</button></p>
+      <p class="meta" id="save-done" role="status"></p>
+      <p class="meta">Dans la 0.8.0&nbsp;: Paramètres, «&nbsp;Importer une sauvegarde&nbsp;», puis colle le texte. Garde le fichier comme copie de secours.</p>
+    </div>
+    <script>
+    // The browser version (play/) keeps its game in this site's localStorage, under "abysse.save" (the very text its "Export" gives). This page is on the same
+    // origin, so it can hand that text to the player. Nothing is sent anywhere.
+    (function () {
+      var text = null;
+      try { text = localStorage.getItem('abysse.save'); } catch (e) { /* storage refused: nothing to offer */ }
+      if (!text) return;
+      document.getElementById('saved').hidden = false;
+      var done = document.getElementById('save-done');
+      document.getElementById('save-copy').onclick = function () {
+        navigator.clipboard.writeText(text).then(
+          function () { done.textContent = 'Partie copiée.'; },
+          function () { done.textContent = 'La copie a échoué : prends le fichier.'; });
+      };
+      document.getElementById('save-file').onclick = function () {
+        var a = document.createElement('a');
+        a.href = URL.createObjectURL(new Blob([text], { type: 'application/json' }));
+        a.download = 'abysse-partie-0.7.0.json';
+        a.click();
+        done.textContent = 'Fichier téléchargé.';
+      };
+    })();
+    </script>
   </section>
 
   <section aria-labelledby="t-iphone">
     <h2 id="t-iphone">Sur iPhone</h2>
-    <ol class="steps">
-      <li><div><p class="lead"><b>Ouvre la page dans Safari</b> et touche «&nbsp;Jouer dans le navigateur&nbsp;».</p></div></li>
-      <li><div><p class="lead"><b>Touche le bouton Partager</b> (le carré avec une flèche vers le haut), puis «&nbsp;Sur l'écran d'accueil&nbsp;».</p></div></li>
-      <li><div><p class="lead"><b>Lance le jeu depuis son icône</b>, téléphone en paysage&nbsp;: il s'ouvre en plein écran, comme une application.</p><p>Ta partie est enregistrée sur ton iPhone. Pense à ne pas effacer les données de Safari, ou exporte ta sauvegarde depuis les Paramètres du jeu.</p></div></li>
-    </ol>
+    <p class="note">Pas encore d'application iPhone pour la 0.8.0. En attendant, la <a href="play/">version 0.7.0 du navigateur</a> marche sur iPhone (Safari, puis Partager, «&nbsp;Sur l'écran d'accueil&nbsp;»).</p>
   </section>
 
-  <section aria-labelledby="t-update">
-    <h2 id="t-update">Mettre à jour</h2>
-    <p class="note">Quand une nouvelle version sort, retélécharge le fichier depuis cette page et installe-le par-dessus&nbsp;: ta partie est gardée. Pas besoin de désinstaller.</p>
-  </section>
-
-  <!-- notes:start -->
-<section aria-labelledby="t-notes">
-<h2 id="t-notes">Notes de version</h2>
+  <section aria-labelledby="t-notes">
+    <h2 id="t-notes">Notes de version</h2>
 <details class="release" open>
+<summary><h3><b>Version 0.8.0</b></h3> <span>19 novembre 2026</span></summary>
+<p class="brief">Abysse est refait de zéro avec un nouveau moteur&nbsp;: ce n'est plus un jeu dans une page web mais une vraie application, pour Android et pour Windows. Tu retrouves le contenu de la 0.7.0, avec en plus la manette, huit boss, de nouveaux monstres et de nouveaux objets, des combats retravaillés (le Chevalier, la Sorcière, les élites) et un coffre gardé dans chaque carte. Installe-la par-dessus la 0.7.0&nbsp;: sur Android, ta partie est reprise toute seule.</p>
+<h4>Ta partie</h4>
+<ul>
+<li>La 0.8.0 s'installe par-dessus la 0.7.0 sans la désinstaller (même application, même signature)&nbsp;: au premier lancement, elle trouve ta partie de la 0.7.0 et reprend tes personnages. Ne désinstalle pas la 0.7.0 avant&nbsp;: ta partie partirait avec. Par prudence, exporte-la d'abord dans la 0.7.0 (Options, Exporter) et garde le texte. Si tu n'as pas joué depuis longtemps, joue une carte dans la 0.7.0 avant de mettre à jour&nbsp;: seule une partie à jour est reprise.</li>
+<li>Sur PC, ou si tu jouais dans le navigateur (téléphone compris), la reprise n'est pas automatique&nbsp;: exporte ta partie dans le navigateur, puis, dans la 0.8.0, Paramètres, onglet Sauvegarde, «&nbsp;Importer une sauvegarde&nbsp;».</li>
+<li>Les objets qui ne peuvent pas être repris tels quels sont signalés au passage&nbsp;; ta partie d'origine est gardée de côté dans l'application.</li>
+<li>Si le jeu est fermé par le téléphone pendant une carte, «&nbsp;Continuer&nbsp;» la reprend là où tu en étais.</li>
+<li>Le compte en ligne (sauvegarde sur un compte Google) est facultatif&nbsp;: tu peux jouer sans, et il reste éteint tant que tu ne touches pas «&nbsp;Continuer avec Google&nbsp;».</li>
+</ul>
+<h4>Nouveautés</h4>
+<ul>
+<li>Huit boss. L'Éteigneuse (Cryptes, paliers 10, 55, 110 et 155)&nbsp;: sa chapelle est pleine de candélabres, et à partir de 66&nbsp;% de sa vie la salle tombe dans le noir. Hors de la lumière d'un candélabre allumé, tu es ralenti et mordu par le froid&nbsp;; elle souffle les flammes. Sa couronne n'a plus qu'une flamme à la fin. Son unique&nbsp;: l'Anneau de la Chapelle ardente (froid, vie, et ceux qui te frappent en mêlée sont Glacés).</li>
+<li>La Lamproie de la citerne (paliers 20, 65, 120 et 165)&nbsp;: elle nage cachée, mord la berge et s'échoue&nbsp;; l'eau vive frappe toutes les demi-secondes, des vannes assèchent des places. Son unique&nbsp;: Les Sept Ouïes, une amulette de foudre (sept ennemis Électrisés tués chargent une décharge).</li>
+<li>Le Taureau d'airain (Fournaises, paliers 40, 85, 140 et 185)&nbsp;: seul un choc l'abat. Fais-le charger dans un pilier&nbsp;: huit fissures le tuent, et un coup qui le tuerait lui laisse 1 point de vie. Son bronze le protège tant qu'il n'est pas sonné. Son unique&nbsp;: les Fers du Taureau, une ceinture (armure, esquive, résistance au feu, Élan). Les cinq premiers boss restent&nbsp;; chaque nouveau boss tire son unique dans la réserve du premier gardien de son biome.</li>
+<li>Un coffre gardé dans chaque carte, à la place des petits coffres au hasard&nbsp;: un seul, dans une salle du chemin principal. Il vaut autant que 20 monstres normaux (jusqu'à 2,5 élites, quatre fois l'or, de l'artisanat), et plus on descend, plus il est riche. Une colonne dorée monte du coffre fermé et sa marque dorée bat sur la mini-carte dès que tu l'as vu. Le toucher brise son sceau et réveille sa garde&nbsp;: une meute de la carte, deux à partir du palier 30, plus souvent élite. Aucun minuteur&nbsp;: le coffre attend que tu sois prêt. Quand le dernier gardien tombe, il éclate en trois gerbes.</li>
+<li>Les combos de la Sorcière. Chaque sort du second bouton profite d'un état&nbsp;: le Météore d'un ennemi Glacé, la Pluie de météores d'un ennemi en feu, la Comète noire d'un ennemi Électrisé. Contre un ennemi qui porte l'état, le sort fait 50&nbsp;% de dégâts en plus (puis l'ennemi ne porte plus l'état), et si un ennemi du cercle le porte au lancer, il tombe deux fois plus vite. La visée automatique cherche d'abord un ennemi qui porte l'état, et le bouton s'allume d'un anneau de la couleur de l'état quand un tel ennemi est à portée.</li>
+<li>Le combat du Chevalier est plus fluide (détails dans Changements)&nbsp;: la Rage se gagne en frappant, un déplacement arme le troisième coup, et trois petites marques près de la barre de Rage te le montrent.</li>
+<li>Les effets des attaques de zone. Quand une meute tombe d'un coup, tu le vois&nbsp;: un anneau, de la poussière et un éclair&nbsp;; les explosions en chaîne du Reliquaire sont des échos sombres à liseré de braise&nbsp;; la Nova, le Météore et l'éclat de meute éclairent le sol&nbsp;; les morts éclatent depuis le point d'impact, à la couleur de l'élément. Les chiffres de brûlure d'une meute qui brûle côte à côte se regroupent en un seul, avec un total par vague. Le réglage «&nbsp;Flashs&nbsp;» réduit les éclairs.</li>
+<li>Les voies de l'arbre&nbsp;: un bouton «&nbsp;Voie&nbsp;», à droite de «&nbsp;Chercher&nbsp;», dessine en pointillés roses les six prochains pas d'une des trois voies de ta classe. C'est un simple guide&nbsp;: rien n'est alloué à ta place.</li>
+<li>Sac et équipement&nbsp;: chaque emplacement vide montre le contour de ce qu'il attend&nbsp;; le message du sac passe à la ligne au lieu de cacher les boutons&nbsp;; l'Autel des reliques range ses choix en deux groupes.</li>
+<li>Un avertissement pour le Pacte inversé&nbsp;: porter une aura ou prendre un nœud qui rendrait une compétence impayable le dit avant («&nbsp;Avec elle, votre Rage ne dépasserait plus 20&nbsp;: Tourbillon en coûte 25&nbsp;»), sans rien refuser.</li>
+<li>Compte en ligne facultatif&nbsp;: «&nbsp;Continuer avec Google&nbsp;» (Paramètres, onglet Compte, ou depuis l'accueil) garde ta partie en ligne&nbsp;; si ta partie en ligne et celle de l'appareil diffèrent, un écran te laisse choisir. Aucun compte invité n'est créé.</li>
+<li>Une application Android refaite, et une version Windows (une archive à décompresser). Il n'y a pas de version navigateur de la 0.8.0. Android 8 ou plus récent, téléphone 64&nbsp;bits seulement&nbsp;; PC Windows 64&nbsp;bits.</li>
+<li>La manette&nbsp;: stick gauche pour te déplacer, stick droit pour viser (sans lui, la visée se fait toute seule vers l'ennemi devant toi), gâchette droite maintenue pour attaquer, A pour ramasser ou interagir, X et Y pour les compétences, B pour esquiver, LB pour la potion, la croix pour ouvrir le sac, la carte, l'arbre et le personnage, Start pour la pause. Les boutons affichés suivent la manette que tu tiens.</li>
+<li>Accessibilité&nbsp;: touches et boutons de manette remappables, aide au daltonisme (raretés et dangers aussi par une forme), réglage des vibrations (voir «&nbsp;À savoir&nbsp;»).</li>
+<li>Français et anglais, au choix dans les Paramètres.</li>
+<li>Un guidage refait&nbsp;: un voile qui éclaire ce qu'il faut toucher, avec un lièvre qui te parle, un appui à la fois, et «&nbsp;Passer&nbsp;» toujours là. La liste de 23 missions disparaît&nbsp;: chaque personnage a un but de 13 étapes, il y a des leçons, et les Succès (le bouton s'appelle maintenant «&nbsp;Succès&nbsp;»). Une leçon ne se montre qu'une fois par compte.</li>
+<li>Le lièvre cornu est ton premier familier, gratuit, au premier retour au Refuge. Le crapaud quitte le jeu&nbsp;: un crapaud d'une ancienne partie devient le lièvre.</li>
+<li>Tous les costumes et tous les familiers sont ouverts (34 de chaque), tant qu'il n'y a pas de boutique. Ceux d'un Succès ou d'une mission restent à gagner.</li>
+<li>De nouveaux monstres (18), des boss redessinés, des décors vivants, un nouveau sol au Gouffre.</li>
+<li>Des élites élémentaires (Embrasé, Givrant, Orageux, Ténébreux)&nbsp;: un tiers de leur coup est dans l'élément, avec un halo à sa couleur. Un coup élémentaire reçu se voit et s'entend&nbsp;; la charge de la gargouille est électrique.</li>
+<li>Des objets uniques propres à chaque classe&nbsp;: 37 par classe, et 48 que toutes les classes peuvent porter (159 en tout). Le Traqueur en gagne 19, avec une panoplie, l'Affût du Piégeur&nbsp;; la Sorcière en gagne 6.</li>
+<li>La Comète noire est l'arme de boss de la Sorcière&nbsp;: quatre fois plus de dégâts aux élites et aux boss.</li>
+<li>«&nbsp;Proposer d'équiper&nbsp;» (Paramètres, onglet Combat, éteint par défaut)&nbsp;: quand tu ramasses un objet meilleur que ce que l'équipement automatique aurait mis, une petite carte te propose de l'équiper sans passer par le sac (4 secondes, ou E, ou RB à la manette).</li>
+<li>Trois combinaisons de mouvement&nbsp;: la Charge emporte un Tourbillon en cours, un tir se bande pendant la Roulade et part à sa sortie, la Nova éclate à l'arrivée du Téléport.</li>
+<li>Le Refuge et les ateliers sont redessinés (feu de camp, forge, coffre, Autel des reliques), la poupée d'équipement a une nouvelle disposition (Costume, Casque, Amulette / Arme, Torse, Main gauche / Anneau, Ceinture, Anneau / Gants, Bottes, Familier) et le coffre a 48 cases par onglet.</li>
+<li>Moins de chauffe&nbsp;: hors carte, le jeu passe à 30 images par seconde quand rien ne bouge, et reste à 30 si ton téléphone chauffe.</li>
+</ul>
+<h4>Changements</h4>
+<ul>
+<li>Chevalier&nbsp;: plus solide (armure de classe, 12 de vie par niveau), la Charge te protège (−25&nbsp;% de dégâts reçus pendant 2 secondes), ses attaques de base sont renforcées (×1,3), le Tourbillon coûte 25 de Rage. Le Bond et la Charge te donnent 6 de Rage par ennemi touché (30 au plus)&nbsp;; le Tourbillon et la Tempête d'acier se relancent après 3 secondes, la Charge et la Traînée après 2,8&nbsp;; la Rage fond après 6 secondes sans combat, à 5 par seconde&nbsp;; un déplacement arme ton troisième coup (les Sabots du Marteleur en arment deux) et tu fais un petit pas vers ta cible en frappant. Rage froide&nbsp;: 30&nbsp;% de vie gardée pour +25&nbsp;% de dégâts (c'était 40&nbsp;% pour +5&nbsp;%). Contrepartie&nbsp;: tu meurs un peu plus aux paliers 30 à 40.</li>
+<li>Sorcière&nbsp;: 10 de vie par niveau (c'était 8)&nbsp;; la Nova de givre et la Brume glaciale couvrent 96 au lieu de 72, la Nova de foudre 112 au lieu de 90&nbsp;; Météore, Pluie de météores et Comète noire frappent plus fort et reviennent toutes les 7 secondes (c'était 8,5)&nbsp;; les traits de baguette éclatent&nbsp;; la Mana revient à 12 par seconde (c'était 9) et le coût des sorts monte de 3&nbsp;% par niveau de compétence au-delà de 12 (c'était 6&nbsp;%)&nbsp;; les traits portent plus loin (290 au lieu de 240), la visée automatique aussi (200 au lieu de 180) et son esquive passe de 10 à 15&nbsp;%&nbsp;; Ferveur et Calme de l'orage ne rendent plus tes compétences 10&nbsp;% plus chères.</li>
+<li>La Brûlure du Météore suit enfin ton coup&nbsp;: le sol brûle 30&nbsp;% du coup en 3 secondes (10&nbsp;% par seconde&nbsp;; 40&nbsp;% au deuxième palier), et le coup compte tes bonus, tes critiques et les combos. Avant, le sol ne comptait que les dégâts moyens de ton arme&nbsp;: tu voyais des «&nbsp;-35&nbsp;» minuscules sur des monstres enflammés (au niveau 59, un chiffre de 8 monte vers 130). Les autres zones de feu ne changent pas.</li>
+<li>Les élites sont tuables. Avant, certaines demandaient plus de 8 fois le temps d'une élite simple, et certaines ne mouraient plus. Trois règles&nbsp;: la régénération s'arrête 2 secondes après chaque coup ou brûlure&nbsp;; un monstre ne reçoit qu'un seul bouclier par 7 secondes, quel que soit le nombre de Protecteurs autour&nbsp;; Blindé et Protecteur ne sortent jamais ensemble. Le bouclier lui-même ne change pas (35&nbsp;% de la vie, 4 secondes). Visé&nbsp;: jamais plus de 2,5 fois le temps d'une élite simple (la pire était à 8,08).</li>
+<li>Le Taureau d'airain ne s'arrête plus&nbsp;: un étourdissement ou un gel ne coupe plus sa charge&nbsp;; pendant l'élan, il met l'élan en pause, puis il charge sur la ligne annoncée.</li>
+<li>Uniques du Traqueur réparés&nbsp;: la Bouche d'Ombre ouvre aussi son Abîme avec un troisième tir&nbsp;; la Cape de l'Embusqué lève le Rempart avec un tir de l'attaque de base, comme avec un coup de mêlée&nbsp;; l'Arc de Ronce annonce 5 saignements (le plus que la règle garde), pas 8. Le Traqueur reste un peu devant&nbsp;: son avance vient des rebonds de ses flèches.</li>
+<li>Runes&nbsp;: une rune qui ne va pas à une compétence est refusée, et ne compte plus dans la puissance affichée. La Chaîne ne fait rebondir ni la Volée ni la Pluie de braises (ce que disait déjà sa description).</li>
+<li>Forge&nbsp;: le prix de chaque niveau est fixe et prévisible. Au-delà de +15, une jauge de forge visible se remplit à chaque échec (un échec rend toujours la moitié du prix)&nbsp;; jauge pleine, la réussite est assurée. Jamais plus de 3 échecs de suite, jamais de recul. Défaire l'arbre de compétences ou l'arbre d'atlas coûte un prix qui suit le niveau de ton personnage.</li>
+<li>Le marchand est propre à chaque personnage&nbsp;: deux amis de la même classe ne voient plus le même étal.</li>
+<li>Expérience&nbsp;: gagnée en entier quel que soit l'écart de niveau&nbsp;; une mort en fait perdre 2&nbsp;%. Les niveaux 80 à 99 coûtent 40&nbsp;% de leur ancien prix. Après le niveau 100, une mort fait perdre 2&nbsp;% de la barre de gloire (5&nbsp;% avant).</li>
+<li>Les résistances sont mieux réparties&nbsp;: feu, froid et foudre pèsent à peu près pareil, l'ombre est plus rare (deux fois moins d'élites Ténébreuses et d'ombre sur les objets, sauf aux anneaux de la forge). La Cathédrale est le biome de la foudre&nbsp;; plusieurs meutes sont revues. Un biome change toujours le décor et les familles, pas la difficulté&nbsp;: elle ne dépend que du palier.</li>
+<li>Aucun message coupé&nbsp;: chaque texte des menus a été essayé dans sa boîte, en français et en anglais, à plusieurs tailles d'interface&nbsp;; ceux qui dépassaient sont raccourcis ou passent à la ligne.</li>
+<li>Le mot de difficulté (la flèche et le risque) est recalibré sur de vraies parties jouées par un robot&nbsp;; ses seuils seront ajustés après vos premières parties.</li>
+<li>L'Abîme et le palier 50 sont gardés tels quels&nbsp;: refaire des paliers plus bas doit suffire pour monter et t'équiper avant le boss. Dis-moi si ce n'est pas le cas.</li>
+<li>Un boss bloqué fait un saut annoncé, avec de faibles dégâts à l'arrivée.</li>
+<li>Plus de publicité, aucun minuteur, pas de missions du jour&nbsp;: comme avant.</li>
+</ul>
+<h4>Corrections</h4>
+<ul>
+<li>Des monstres pouvaient rester coincés plus de 10 secondes (porteurs de ruine, deux foules contre un mur, un golem contre un objet, une chauve-souris hors de la carte, une meute qui s'éveille)&nbsp;: c'est corrigé, et les bousculades sont deux fois moins longues.</li>
+<li>Dans le sac, un chiffre de puissance à six chiffres ne pousse plus les colonnes et ne rétrécit plus la fiche de l'objet.</li>
+<li>Des descriptions disaient autre chose que ce que fait le jeu (Pacte inversé, Ampleur, Charge)&nbsp;: elles sont justes, et «&nbsp;Protection&nbsp;» et «&nbsp;Blocage&nbsp;» sont expliqués dans le glossaire.</li>
+</ul>
+<h4>À savoir</h4>
+<ul>
+<li>Rien ne part de ton appareil tant que tu n'as rien allumé&nbsp;: le compte en ligne est éteint, les statistiques anonymes aussi (elles s'allument dans les Paramètres). «&nbsp;Signaler un problème&nbsp;» n'envoie rien tant que tu ne touches pas «&nbsp;Envoyer&nbsp;». Voir la page «&nbsp;Confidentialité&nbsp;».</li>
+<li>Pas encore essayé sur un vrai téléphone&nbsp;: la reprise automatique de ta partie de la 0.7.0 (elle marche en test, mais n'a jamais été jouée par-dessus une vraie 0.7.0 sur un téléphone), la reprise d'une carte après une fermeture par le téléphone, le coffre gardé, les nouveaux effets des attaques de zone et le réglage «&nbsp;Flashs réduits&nbsp;». Si quelque chose cloche, garde ta sauvegarde exportée et signale-le.</li>
+<li>Les vibrations ne marchent pas encore sur téléphone&nbsp;: le réglage existe, mais rien ne vibre pour l'instant.</li>
+<li>Fluidité&nbsp;: le jeu tient 60 images par seconde en moyenne sur trois téléphones Android essayés, mais un Pixel 5 peut saccader un peu dans les Cryptes. Dis-moi quel téléphone tu as si le jeu ne te paraît pas fluide.</li>
+<li>Les sons des sorts et des frappes seront retravaillés dans une prochaine version.</li>
+<li>La version Windows a été essayée sur Windows 11 seulement. Windows dira «&nbsp;éditeur inconnu&nbsp;» au premier lancement&nbsp;: le jeu n'est pas signé (un certificat est payant). Vérifie l'empreinte du fichier avant (page de téléchargement).</li>
+<li>Cette version est pour Android et Windows. Pas d'application iPhone.</li>
+</ul>
+</details>
+<h3 style="font-family:var(--f-display);font-weight:500;font-size:20px;margin:22px 0 10px;color:var(--bone)">Anciennes versions (application 0.7.0 et avant)</h3>
+<details class="release">
 <summary><b>Version 0.7.0</b> <span>10 octobre 2026</span></summary>
 <p class="brief">Plus de bouton « Valider » dans les arbres : un point alloué compte tout de suite, et tu peux l’annuler tant que l’arbre est ouvert. Le bouton « Descendre » propose le bon palier après chaque carte, avec des flèches pour en changer. Et ton familier ne boucle plus quand ton sac est plein.</p>
 <h4>Changements</h4>
@@ -249,31 +417,11 @@ footer { color: var(--ash); font-size: 14px; border-top: 1px solid var(--edge); 
 <li>Trois classes (Chevalier, Sorcière, Traqueur), cinq biomes, des paliers sans fin, des boss avec leur salle, et des centaines d’objets.</li>
 </ul>
 </details>
-</section>
-<!-- notes:end -->
-
-  <section aria-labelledby="t-shots">
-    <h2 id="t-shots">À quoi ça ressemble</h2>
-    <div class="shots">
-      <figure><img src="img/fournaises.jpg" alt="Un Chevalier dans les Fournaises, entre coulées de lave et chariots de minerai" loading="lazy" width="1266" height="585"><figcaption>Les Fournaises, palier 36</figcaption></figure>
-      <figure><img src="img/cathedrale.jpg" alt="Un Traqueur dans la Cathédrale engloutie" loading="lazy" width="1266" height="585"><figcaption>La Cathédrale engloutie, palier 22</figcaption></figure>
-      <figure><img src="img/cryptes.jpg" alt="Un Chevalier dans les Cryptes de Morteveille" loading="lazy" width="1266" height="585"><figcaption>Les Cryptes, palier 3</figcaption></figure>
-    </div>
-  </section>
-
-  <section aria-labelledby="t-what">
-    <h2 id="t-what">Le jeu</h2>
-    <ul class="features">
-      <li><b>Trois classes</b>Le Chevalier, la Sorcière et le Traqueur, chacun avec ses variantes de sorts et un arbre de 208 nœuds.</li>
-      <li><b>Cinq biomes, des paliers sans fin</b>Des cryptes à l'abîme, avec un boss et sa salle tous les cinq paliers.</li>
-      <li><b>Le butin</b>Des centaines d'objets, des uniques à combiner, une forge jusqu'à +15. Et parfois un prodige, une chance sur des millions.</li>
-      <li><b>Sans pression</b>Pas de missions du jour, pas de minuteur, pas de publicité pendant une carte. Tu joues à ton rythme.</li>
-    </ul>
   </section>
 
   <footer>
-    <p style="margin:0">Version de test, partagée entre amis. Le jeu ne collecte rien&nbsp;: ta partie est enregistrée sur ton téléphone.</p>
-    <p style="margin:0">Pas encore d’application iPhone&nbsp;: sur iPhone, on joue dans le navigateur.</p>
+    <p style="margin:0">Version de test, partagée entre amis. Pas de publicité, aucun pisteur&nbsp;: ta partie est enregistrée sur ton appareil, et rien n'en part tant que tu n'as pas allumé toi-même le compte en ligne ou les statistiques anonymes. <a href="confidentialite.html">Confidentialité</a>.</p>
+    <p style="margin:0">Abysse est un nom de travail. Pas encore d'application iPhone.</p>
   </footer>
 </main>
 </body>

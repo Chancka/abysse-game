@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Abysse : confidentialité</title>
+<meta name="description" content="Ce que le jeu Abysse garde sur toi, pourquoi, où, combien de temps, et comment tout effacer. Privacy policy in English below.">
+<meta name="theme-color" content="#0d0c12">
+<link rel="icon" type="image/png" href="img/favicon.png">
+<style>
+/* The download page's look (index.html), with no external font and no script: this page loads nothing from anywhere else. */
+:root {
+  color-scheme: dark;
+  --night: #0d0c12; --stone: #17151f; --edge: #2c2836; --bone: #ece6d8; --ash: #a39e93; --brass: #d3a24a; --ember: #e2683a;
+  --f-display: "Pixelify Sans", "Courier New", monospace;
+  --f-body: "Atkinson Hyperlegible", "Segoe UI", system-ui, sans-serif;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+body { background: var(--night); color: var(--bone); font-family: var(--f-body); font-size: 17px; line-height: 1.6; }
+.page { max-width: 760px; margin: 0 auto; padding-inline: 16px; padding-block: calc(28px + env(safe-area-inset-top, 0px)) calc(48px + env(safe-area-inset-bottom, 0px)); display: grid; gap: 36px; }
+h1 { font-family: var(--f-display); font-weight: 700; font-size: clamp(34px, 8vw, 52px); line-height: 1; margin: 0 0 8px; }
+h2 { font-family: var(--f-display); font-weight: 500; font-size: 24px; margin: 0 0 10px; color: var(--brass); }
+h3 { font-family: var(--f-display); font-weight: 500; font-size: 18px; margin: 18px 0 6px; color: var(--bone); }
+p { margin: 0 0 10px; max-width: 68ch; }
+ul { margin: 0 0 10px; padding-left: 20px; display: grid; gap: 6px; max-width: 68ch; }
+a { color: var(--brass); }
+a:focus-visible { outline: 3px solid var(--bone); outline-offset: 3px; }
+.lead { color: var(--ash); font-size: 18px; }
+code { font-family: ui-monospace, Consolas, "Courier New", monospace; color: var(--brass); letter-spacing: .04em; }
+.note { border-left: 3px solid var(--ember); padding: 6px 0 6px 14px; color: var(--ash); margin: 0 0 10px; max-width: 68ch; }
+table { border-collapse: collapse; width: 100%; font-size: 15px; }
+th, td { text-align: left; vertical-align: top; padding: 8px 10px; border: 1px solid var(--edge); }
+th { background: var(--stone); font-weight: 700; }
+td:first-child { white-space: nowrap; }
+.table-wrap { overflow-x: auto; }
+nav a { margin-right: 14px; }
+footer { color: var(--ash); font-size: 14px; border-top: 1px solid var(--edge); padding-top: 18px; }
+.todo { background: #3a2a10; color: #f1cf87; padding: 0 4px; border: 1px dashed #8f6420; }
+.meta { color: var(--ash); font-size: 15px; }
+small { color: var(--ash); font-family: var(--f-body); font-size: 15px; }
+section { scroll-margin-top: 16px; }
+</style>
+</head>
+<body>
+<main class="page">
+  <header>
+    <h1>Confidentialité</h1>
+    <p class="lead">Abysse est un jeu fait par une personne, sans publicité et sans pisteur. Cette page dit ce que le jeu garde sur toi, pourquoi, où, combien de temps, et comment tout effacer ou refuser.</p>
+    <nav><a href="./">Retour à la page du jeu</a> <a href="#english">English</a></nav>
+    <p class="meta">Version 0.8.0. Mise à jour le 18 novembre 2026.</p>
+  </header>
+
+  <section id="resume" aria-labelledby="t-resume">
+    <h2 id="t-resume">En bref</h2>
+    <ul>
+      <li>Ta partie reste sur ton appareil. <b>Rien ne part tant que tu n'as rien allumé&nbsp;:</b> le compte en ligne et les statistiques anonymes sont éteints au départ.</li>
+      <li>Le jeu n'a ni publicité, ni pisteur, ni outil de mesure d'un tiers, et ne vend rien de toi.</li>
+      <li><b>Tu peux tout effacer toi-même</b> (voir plus bas).</li>
+    </ul>
+  </section>
+
+  <section aria-labelledby="t-appareil">
+    <h2 id="t-appareil">Ce qui reste sur ton appareil</h2>
+    <ul>
+      <li>Ta partie (personnages, objets, progression, réglages du joueur)&nbsp;: sur Windows dans <code>%LOCALAPPDATA%\fr.abysse.app\saves</code>, sur Android dans le stockage interne du jeu, sur iOS dans le dossier du jeu. Deux copies de secours à côté.</li>
+      <li>Les réglages de l'appareil (volume, taille de l'interface, langue…).</li>
+      <li>Exporter ou importer une partie ne se fait que quand tu le demandes (presse-papiers ou fichier)&nbsp;; le jeu n'envoie rien.</li>
+      <li>En cas de plantage, le rapport technique d'Unity (le moteur du jeu) reste sur l'appareil.</li>
+    </ul>
+  </section>
+
+  <section aria-labelledby="t-part">
+    <h2 id="t-part">Ce qui part, quand, pourquoi, combien de temps</h2>
+
+    <h3>1. Le compte en ligne <small>(éteint au départ&nbsp;; tu l'allumes dans Paramètres, Compte)</small></h3>
+    <ul>
+      <li><b>Pourquoi&nbsp;:</b> garder une copie de ta partie, la retrouver sur un autre appareil ou après une réinstallation.</li>
+      <li><b>Quoi&nbsp;:</b> ce que Google transmet de ton compte quand tu choisis «&nbsp;Continuer avec Google&nbsp;» (ton adresse e-mail, ton nom, l'adresse de ta photo de profil et l'identifiant de ce compte), un identifiant d'appareil tiré au hasard, la version du jeu, <b>ta partie entière</b> (dont les noms de tes personnages) et un petit résumé (noms, classes, niveaux, palier le plus profond, cartes terminées, date). Le jeu ne se sert que de ton adresse e-mail, pour te montrer avec quel compte tu es connecté&nbsp;; il n'affiche ni ton nom ni ta photo. Un compte «&nbsp;invité&nbsp;» créé par l'ancienne version 0.7.0 (un identifiant tiré au hasard, sans nom ni e-mail) reste valable. Le serveur voit aussi l'adresse internet (IP) de ton appareil, gardée dans ses journaux techniques.</li>
+      <li><b>Quand&nbsp;:</b> après chaque carte et quand le jeu passe en arrière-plan, quelques secondes plus tard.</li>
+      <li><b>Où&nbsp;:</b> chez Supabase, dans l'Union européenne (région West EU, Paris), en HTTPS.</li>
+      <li><b>Combien de temps&nbsp;:</b> la partie et les 20 dernières copies (l'historique) jusqu'à ce que tu supprimes le compte. Un compte invité sans partie depuis 30 jours peut être effacé. Journaux techniques (où figure l'adresse IP)&nbsp;: 1 jour pour ceux du serveur et de la base, 1 heure pour ceux de la connexion (7 jours au plus si le projet change d'offre chez Supabase).</li>
+      <li>Personne d'autre que toi ne peut lire ta partie&nbsp;: le serveur ne la donne qu'à ton compte.</li>
+    </ul>
+
+    <h3>2. Les statistiques anonymes <small>(éteintes au départ&nbsp;; Paramètres, Sauvegarde, «&nbsp;Statistiques anonymes&nbsp;»)</small></h3>
+    <ul>
+      <li><b>Pourquoi&nbsp;:</b> voir où les joueurs reviennent, s'arrêtent ou meurent, et si le jeu reste fluide sur leur appareil, pour équilibrer et corriger le jeu.</li>
+      <li><b>Quoi&nbsp;:</b> un résumé de chaque séance (durée, cartes commencées, terminées, perdues, paliers, classes jouées, niveau, mission la plus avancée, morts par palier), la version, la plateforme, la langue, le jour de ta première séance, un indicateur «&nbsp;version de test&nbsp;», et un identifiant tiré au hasard propre à ces mesures. Aucun nom, aucune adresse e-mail, aucun identifiant de compte, aucun contenu de la partie.</li>
+      <li><b>Quand&nbsp;:</b> à la fin de chaque séance.</li>
+      <li><b>Où&nbsp;:</b> chez Cloudflare, dans l'Union européenne (la base est verrouillée sur l'Union européenne). L'adresse internet n'est jamais gardée en clair (une empreinte salée, effacée après 2 jours, sert seulement à limiter les abus). Les journaux techniques de Cloudflare sont gardés 3 jours (7 jours au plus).</li>
+      <li><b>Combien de temps&nbsp;:</b> les résumés détaillés 90 jours&nbsp;; les jours de jeu d'une installation 400 jours après la dernière séance&nbsp;; des totaux par jour, sans aucun identifiant, 25 mois.</li>
+      <li><b>Éteindre&nbsp;:</b> plus rien ne part dès que l'interrupteur est éteint.</li>
+    </ul>
+
+    <h3>3. Signaler un problème <small>(seulement quand tu le demandes&nbsp;; Paramètres, Sauvegarde)</small></h3>
+    <ul>
+      <li>Tu peux copier le rapport ou l'écrire dans un fichier, sur ton appareil&nbsp;: rien ne part.</li>
+      <li>Le bouton «&nbsp;Envoyer&nbsp;» le transmet, seulement quand tu appuies dessus&nbsp;: un identifiant d'installation tiré au hasard, propre aux rapports, ton message, la version, le modèle de l'appareil, son système, sa carte graphique, l'écran, la langue, la fluidité de la dernière minute, quelques réglages, la classe, le niveau, la puissance et l'or du personnage, les dernières cartes, les dernières erreurs du jeu (sans les chemins de tes dossiers), et, quand il tient dans la taille permise, l'enregistrement de la carte en cours pour la rejouer. Gardé jusqu'à sa lecture, puis 6 mois.</li>
+    </ul>
+    <p>Aucune publicité, aucun traceur, aucune revente&nbsp;: rien de tout cela n'est utilisé pour de la publicité ou du profilage. Le jeu ne demande ni ton nom, ni ton âge, ni ton numéro de téléphone.</p>
+  </section>
+
+  <section aria-labelledby="t-supprimer">
+    <h2 id="t-supprimer">Supprimer tes données</h2>
+    <ul>
+      <li><b>Le compte et tout ce que le serveur garde&nbsp;:</b> Paramètres, Compte, «&nbsp;Supprimer le compte&nbsp;» (la partie et l'historique sont effacés aussitôt, puis le compte lui-même). Ta partie sur l'appareil n'est pas touchée.</li>
+      <li><b>Les statistiques&nbsp;:</b> éteindre l'interrupteur arrête tout envoi&nbsp;; ce qui est déjà parti ne porte aucun identifiant qui mène à toi. Pour une demande, écris à <a href="mailto:chancka@hotmail.fr">chancka@hotmail.fr</a>.</li>
+      <li><b>Sur l'appareil&nbsp;:</b> désinstaller le jeu (sur Windows, effacer aussi <code>%LOCALAPPDATA%\fr.abysse.app</code>).</li>
+    </ul>
+  </section>
+
+  <section aria-labelledby="t-droits">
+    <h2 id="t-droits">Tes droits, et qui contacter</h2>
+    <p>Tu peux demander l'accès à tes données, leur correction ou leur effacement&nbsp;: <a href="mailto:chancka@hotmail.fr">chancka@hotmail.fr</a>. Responsable&nbsp;: Charly Boudringhin.</p>
+    <p>Si cette page change de façon importante, la date en haut change et le jeu le dit dans ses notes de version.</p>
+  </section>
+
+  <section id="english" lang="en" aria-labelledby="t-en">
+    <h2 id="t-en">Privacy (English)</h2>
+    <p class="meta">Version 0.8.0. Last updated on 18 November 2026.</p>
+    <h3>In short</h3>
+    <p>Your game stays on your device. <b>Nothing leaves it until you turn something on</b>: the online account and the anonymous stats are off at first. The game has no ads, no trackers, no third-party analytics, and sells nothing about you.</p>
+    <h3>What stays on your device</h3>
+    <ul>
+      <li>Your game (characters, items, progress, player options): on Windows in <code>%LOCALAPPDATA%\fr.abysse.app\saves</code>, on Android in the game's internal storage, on iOS in the game's folder. Two backup copies beside it.</li>
+      <li>The device's settings (volume, interface size, language…).</li>
+      <li>Exporting or importing a game happens only when you ask (clipboard or file); the game sends nothing.</li>
+      <li>If the game crashes, Unity's technical report (Unity is the game engine) stays on the device.</li>
+    </ul>
+    <h3>What leaves, when, why, for how long</h3>
+    <p><b>1. The online account</b> (off at first; you turn it on in Settings, Account).</p>
+    <ul>
+      <li><b>Why:</b> to keep a copy of your game and find it again on another device or after reinstalling.</li>
+      <li><b>What:</b> what Google passes on from your account when you choose "Continue with Google" (your e-mail address, your name, the address of your profile picture and that account's identifier), a random device identifier, the game version, <b>your whole game</b> (including your characters' names) and a short summary (names, classes, levels, deepest tier, maps completed, date). The game only uses your e-mail address, to show you which account you are signed in with; it shows neither your name nor your picture. A "guest" account made by the old version 0.7.0 (a random identifier, with no name or e-mail) remains valid. The server also sees your internet address (IP), kept in its technical logs.</li>
+      <li><b>When:</b> after each map and when the game goes to the background, a few seconds later.</li>
+      <li><b>Where:</b> at Supabase, in the European Union (West EU region, Paris), over HTTPS.</li>
+      <li><b>For how long:</b> your game and its last 20 copies (the history) until you delete the account. A guest account with no game for 30 days may be erased. Technical logs (which hold the IP address): 1 day for the server's and the database's, 1 hour for the sign-in's (7 days at most if the project changes plan at Supabase).</li>
+      <li>Nobody but you can read your game: the server only gives it to your account.</li>
+    </ul>
+    <p><b>2. Anonymous stats</b> (off at first; Settings, Save, "Anonymous stats").</p>
+    <ul>
+      <li><b>Why:</b> to see where players come back, stop or die, and whether the game runs smoothly on their device, to balance and fix it.</li>
+      <li><b>What:</b> a summary of each session (time played, maps started, completed and lost, tiers, classes played, level, furthest mission, deaths by tier), the version, the platform, the language, the day of your first session, a "test build" flag and a random identifier used only for these stats. No name, no e-mail address, no account identifier, nothing of your game.</li>
+      <li><b>When:</b> at the end of each session.</li>
+      <li><b>Where:</b> at Cloudflare, in the European Union (the database is restricted to the European Union). Your internet address is never kept as such (a salted fingerprint, erased after 2 days, only limits abuse). Cloudflare's technical logs are kept 3 days (7 days at most).</li>
+      <li><b>For how long:</b> detailed summaries 90 days; an installation's play days 400 days after its last session; daily totals, with no identifier at all, 25 months.</li>
+      <li><b>Turning it off:</b> nothing more is sent as soon as the switch is off.</li>
+    </ul>
+    <p><b>3. Report a problem</b> (only when you ask, Settings, Save).</p>
+    <ul>
+      <li>You can copy the report or write it to a file on your device: nothing is sent.</li>
+      <li>The "Send" button sends it, only when you tap it: a random install identifier used only for reports, your message, the version, the device model, its system, its graphics card, the screen, the language, the last minute's smoothness, a few settings, the character's class, level, power and gold, the last maps, the game's last errors (without your folders' paths), and, when it fits in the allowed size, the recording of the current map to replay it. Kept until read, then 6 months.</li>
+    </ul>
+    <p>No ads, no trackers, nothing sold: none of this is used for advertising or profiling. The game does not ask for your name, age or phone number.</p>
+    <h3 id="delete">Deleting your data</h3>
+    <ul>
+      <li><b>The account and everything the server keeps:</b> Settings, Account, "Delete account" (your game and its history are erased at once, then the account itself). Your game on the device is not touched.</li>
+      <li><b>Stats:</b> turning the switch off stops all sending; what was already sent carries no identifier that leads to you. For a request, write to <a href="mailto:chancka@hotmail.fr">chancka@hotmail.fr</a>.</li>
+      <li><b>On the device:</b> uninstall the game (on Windows, also delete <code>%LOCALAPPDATA%\fr.abysse.app</code>).</li>
+    </ul>
+    <h3>Your rights</h3>
+    <p>You may ask to access, correct or erase your data: <a href="mailto:chancka@hotmail.fr">chancka@hotmail.fr</a>. Controller: Charly Boudringhin.</p>
+  </section>
+
+  <footer>
+    <a href="./">Abysse</a>
+  </footer>
+</main>
+</body>
+</html>
