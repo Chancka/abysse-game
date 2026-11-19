@@ -68,6 +68,7 @@ footer { color: var(--ash); font-size: 14px; border-top: 1px solid var(--edge); 
 .release h4 { margin: 14px 0 6px; font-family: var(--f-display); font-weight: 500; font-size: 17px; color: var(--brass); }
 .release ul { margin: 0 0 14px; padding-left: 20px; display: grid; gap: 6px; color: var(--ash); }
 .release li { max-width: 72ch; }
+.release li b { color: var(--bone); }
 .fb { display: inline-block; font-size: 12px; line-height: 1; padding: 3px 6px; border: 1px solid var(--brass-deep); color: var(--brass); vertical-align: 1px; white-space: nowrap; }
 @media (prefers-reduced-motion: reduce) { .btn:active { transform: none; } }
 .hash { font-family: ui-monospace, Consolas, "Courier New", monospace; font-size: 14px; color: var(--bone); overflow-wrap: anywhere; margin: 0; }
@@ -217,78 +218,50 @@ section p { max-width: 68ch; }
     <h2 id="t-notes">Notes de version</h2>
 <details class="release" open>
 <summary><h3><b>Version 0.8.0</b></h3> <span>19 novembre 2026</span></summary>
-<p class="brief">Abysse est refait de zéro avec un nouveau moteur&nbsp;: ce n'est plus un jeu dans une page web mais une vraie application, pour Android et pour Windows. Tu retrouves le contenu de la 0.7.0, avec en plus la manette, huit boss, de nouveaux monstres et de nouveaux objets, des combats retravaillés (le Chevalier, la Sorcière, les élites) et un coffre gardé dans chaque carte. Installe-la par-dessus la 0.7.0&nbsp;: sur Android, ta partie est reprise toute seule.</p>
-<h4>Ta partie</h4>
-<ul>
-<li>La 0.8.0 s'installe par-dessus la 0.7.0 sans la désinstaller (même application, même signature)&nbsp;: au premier lancement, elle trouve ta partie de la 0.7.0 et reprend tes personnages. Ne désinstalle pas la 0.7.0 avant&nbsp;: ta partie partirait avec. Par prudence, exporte-la d'abord dans la 0.7.0 (Options, Exporter) et garde le texte. Si tu n'as pas joué depuis longtemps, joue une carte dans la 0.7.0 avant de mettre à jour&nbsp;: seule une partie à jour est reprise.</li>
-<li>Sur PC, ou si tu jouais dans le navigateur (téléphone compris), la reprise n'est pas automatique&nbsp;: exporte ta partie dans le navigateur, puis, dans la 0.8.0, Paramètres, onglet Sauvegarde, «&nbsp;Importer une sauvegarde&nbsp;».</li>
-<li>Les objets qui ne peuvent pas être repris tels quels sont signalés au passage&nbsp;; ta partie d'origine est gardée de côté dans l'application.</li>
-<li>Si le jeu est fermé par le téléphone pendant une carte, «&nbsp;Continuer&nbsp;» la reprend là où tu en étais.</li>
-<li>Le compte en ligne (sauvegarde sur un compte Google) est facultatif&nbsp;: tu peux jouer sans, et il reste éteint tant que tu ne touches pas «&nbsp;Continuer avec Google&nbsp;».</li>
-</ul>
+<p class="brief">Abysse devient une vraie application, pour Android et pour Windows. Trois nouveaux boss, un coffre gardé dans chaque carte, la manette, une sauvegarde en ligne facultative, et des combats revus pour le Chevalier et la Sorcière. Sur Android, installe-la par-dessus la 0.7.0 sans la désinstaller&nbsp;: ta partie est reprise.</p>
 <h4>Nouveautés</h4>
 <ul>
-<li>Huit boss. L'Éteigneuse (Cryptes, paliers 10, 55, 110 et 155)&nbsp;: sa chapelle est pleine de candélabres, et à partir de 66&nbsp;% de sa vie la salle tombe dans le noir. Hors de la lumière d'un candélabre allumé, tu es ralenti et mordu par le froid&nbsp;; elle souffle les flammes. Sa couronne n'a plus qu'une flamme à la fin. Son unique&nbsp;: l'Anneau de la Chapelle ardente (froid, vie, et ceux qui te frappent en mêlée sont Glacés).</li>
-<li>La Lamproie de la citerne (paliers 20, 65, 120 et 165)&nbsp;: elle nage cachée, mord la berge et s'échoue&nbsp;; l'eau vive frappe toutes les demi-secondes, des vannes assèchent des places. Son unique&nbsp;: Les Sept Ouïes, une amulette de foudre (sept ennemis Électrisés tués chargent une décharge).</li>
-<li>Le Taureau d'airain (Fournaises, paliers 40, 85, 140 et 185)&nbsp;: seul un choc l'abat. Fais-le charger dans un pilier&nbsp;: huit fissures le tuent, et un coup qui le tuerait lui laisse 1 point de vie. Son bronze le protège tant qu'il n'est pas sonné. Son unique&nbsp;: les Fers du Taureau, une ceinture (armure, esquive, résistance au feu, Élan). Les cinq premiers boss restent&nbsp;; chaque nouveau boss tire son unique dans la réserve du premier gardien de son biome.</li>
-<li>Un coffre gardé dans chaque carte, à la place des petits coffres au hasard&nbsp;: un seul, dans une salle du chemin principal. Il vaut autant que 20 monstres normaux (jusqu'à 2,5 élites, quatre fois l'or, de l'artisanat), et plus on descend, plus il est riche. Une colonne dorée monte du coffre fermé et sa marque dorée bat sur la mini-carte dès que tu l'as vu. Le toucher brise son sceau et réveille sa garde&nbsp;: une meute de la carte, deux à partir du palier 30, plus souvent élite. Aucun minuteur&nbsp;: le coffre attend que tu sois prêt. Quand le dernier gardien tombe, il éclate en trois gerbes.</li>
-<li>Les combos de la Sorcière. Chaque sort du second bouton profite d'un état&nbsp;: le Météore d'un ennemi Glacé, la Pluie de météores d'un ennemi en feu, la Comète noire d'un ennemi Électrisé. Contre un ennemi qui porte l'état, le sort fait 50&nbsp;% de dégâts en plus (puis l'ennemi ne porte plus l'état), et si un ennemi du cercle le porte au lancer, il tombe deux fois plus vite. La visée automatique cherche d'abord un ennemi qui porte l'état, et le bouton s'allume d'un anneau de la couleur de l'état quand un tel ennemi est à portée.</li>
-<li>Le combat du Chevalier est plus fluide (détails dans Changements)&nbsp;: la Rage se gagne en frappant, un déplacement arme le troisième coup, et trois petites marques près de la barre de Rage te le montrent.</li>
-<li>Les effets des attaques de zone. Quand une meute tombe d'un coup, tu le vois&nbsp;: un anneau, de la poussière et un éclair&nbsp;; les explosions en chaîne du Reliquaire sont des échos sombres à liseré de braise&nbsp;; la Nova, le Météore et l'éclat de meute éclairent le sol&nbsp;; les morts éclatent depuis le point d'impact, à la couleur de l'élément. Les chiffres de brûlure d'une meute qui brûle côte à côte se regroupent en un seul, avec un total par vague. Le réglage «&nbsp;Flashs&nbsp;» réduit les éclairs.</li>
-<li>Les voies de l'arbre&nbsp;: un bouton «&nbsp;Voie&nbsp;», à droite de «&nbsp;Chercher&nbsp;», dessine en pointillés roses les six prochains pas d'une des trois voies de ta classe. C'est un simple guide&nbsp;: rien n'est alloué à ta place.</li>
-<li>Sac et équipement&nbsp;: chaque emplacement vide montre le contour de ce qu'il attend&nbsp;; le message du sac passe à la ligne au lieu de cacher les boutons&nbsp;; l'Autel des reliques range ses choix en deux groupes.</li>
-<li>Un avertissement pour le Pacte inversé&nbsp;: porter une aura ou prendre un nœud qui rendrait une compétence impayable le dit avant («&nbsp;Avec elle, votre Rage ne dépasserait plus 20&nbsp;: Tourbillon en coûte 25&nbsp;»), sans rien refuser.</li>
-<li>Compte en ligne facultatif&nbsp;: «&nbsp;Continuer avec Google&nbsp;» (Paramètres, onglet Compte, ou depuis l'accueil) garde ta partie en ligne&nbsp;; si ta partie en ligne et celle de l'appareil diffèrent, un écran te laisse choisir. Aucun compte invité n'est créé.</li>
-<li>Une application Android refaite, et une version Windows (une archive à décompresser). Il n'y a pas de version navigateur de la 0.8.0. Android 8 ou plus récent, téléphone 64&nbsp;bits seulement&nbsp;; PC Windows 64&nbsp;bits.</li>
-<li>La manette&nbsp;: stick gauche pour te déplacer, stick droit pour viser (sans lui, la visée se fait toute seule vers l'ennemi devant toi), gâchette droite maintenue pour attaquer, A pour ramasser ou interagir, X et Y pour les compétences, B pour esquiver, LB pour la potion, la croix pour ouvrir le sac, la carte, l'arbre et le personnage, Start pour la pause. Les boutons affichés suivent la manette que tu tiens.</li>
-<li>Accessibilité&nbsp;: touches et boutons de manette remappables, aide au daltonisme (raretés et dangers aussi par une forme), réglage des vibrations (voir «&nbsp;À savoir&nbsp;»).</li>
-<li>Français et anglais, au choix dans les Paramètres.</li>
-<li>Un guidage refait&nbsp;: un voile qui éclaire ce qu'il faut toucher, avec un lièvre qui te parle, un appui à la fois, et «&nbsp;Passer&nbsp;» toujours là. La liste de 23 missions disparaît&nbsp;: chaque personnage a un but de 13 étapes, il y a des leçons, et les Succès (le bouton s'appelle maintenant «&nbsp;Succès&nbsp;»). Une leçon ne se montre qu'une fois par compte.</li>
-<li>Le lièvre cornu est ton premier familier, gratuit, au premier retour au Refuge. Le crapaud quitte le jeu&nbsp;: un crapaud d'une ancienne partie devient le lièvre.</li>
-<li>Tous les costumes et tous les familiers sont ouverts (34 de chaque), tant qu'il n'y a pas de boutique. Ceux d'un Succès ou d'une mission restent à gagner.</li>
-<li>De nouveaux monstres (18), des boss redessinés, des décors vivants, un nouveau sol au Gouffre.</li>
-<li>Des élites élémentaires (Embrasé, Givrant, Orageux, Ténébreux)&nbsp;: un tiers de leur coup est dans l'élément, avec un halo à sa couleur. Un coup élémentaire reçu se voit et s'entend&nbsp;; la charge de la gargouille est électrique.</li>
-<li>Des objets uniques propres à chaque classe&nbsp;: 37 par classe, et 48 que toutes les classes peuvent porter (159 en tout). Le Traqueur en gagne 19, avec une panoplie, l'Affût du Piégeur&nbsp;; la Sorcière en gagne 6.</li>
-<li>La Comète noire est l'arme de boss de la Sorcière&nbsp;: quatre fois plus de dégâts aux élites et aux boss.</li>
-<li>«&nbsp;Proposer d'équiper&nbsp;» (Paramètres, onglet Combat, éteint par défaut)&nbsp;: quand tu ramasses un objet meilleur que ce que l'équipement automatique aurait mis, une petite carte te propose de l'équiper sans passer par le sac (4 secondes, ou E, ou RB à la manette).</li>
-<li>Trois combinaisons de mouvement&nbsp;: la Charge emporte un Tourbillon en cours, un tir se bande pendant la Roulade et part à sa sortie, la Nova éclate à l'arrivée du Téléport.</li>
-<li>Le Refuge et les ateliers sont redessinés (feu de camp, forge, coffre, Autel des reliques), la poupée d'équipement a une nouvelle disposition (Costume, Casque, Amulette / Arme, Torse, Main gauche / Anneau, Ceinture, Anneau / Gants, Bottes, Familier) et le coffre a 48 cases par onglet.</li>
-<li>Moins de chauffe&nbsp;: hors carte, le jeu passe à 30 images par seconde quand rien ne bouge, et reste à 30 si ton téléphone chauffe.</li>
+<li><b>Android et Windows</b>&nbsp;: une application Android refaite et une première version Windows. La 0.8.0 ne se joue pas dans le navigateur.</li>
+<li><b>Trois nouveaux boss</b>&nbsp;: l'Éteigneuse, la Lamproie de la citerne et le Taureau d'airain. Le jeu en compte huit, et chaque nouveau boss a son objet unique.</li>
+<li><b>Un coffre gardé dans chaque carte</b>, à la place des petits coffres au hasard.</li>
+<li><b>Manette</b>&nbsp;: tout le jeu se joue à la manette, et les boutons affichés suivent celle que tu tiens.</li>
+<li><b>Sauvegarde en ligne, facultative</b>&nbsp;: «&nbsp;Continuer avec Google&nbsp;» garde ta partie en ligne et la retrouve sur un autre appareil.</li>
+<li><b>Français et anglais</b>, au choix dans les Paramètres.</li>
+<li><b>Accessibilité</b>&nbsp;: touches et boutons remappables, aide au daltonisme.</li>
+<li><b>Nouveau guidage</b>&nbsp;: des leçons courtes et un but par personnage remplacent la liste de missions, avec des Succès à gagner.</li>
+<li><b>Combos de la Sorcière</b>&nbsp;: le Météore frappe plus fort un ennemi Glacé, la Pluie de météores un ennemi en feu, la Comète noire un ennemi Électrisé (+50&nbsp;% de dégâts).</li>
+<li><b>Enchaînements</b>&nbsp;: la Charge emporte un Tourbillon en cours, un tir se bande pendant la Roulade, la Nova éclate à l'arrivée du Téléport.</li>
+<li><b>Objets uniques par classe</b>&nbsp;: 159 uniques en tout, dont une panoplie pour le Traqueur.</li>
+<li><b>Élites élémentaires</b>&nbsp;: Embrasé, Givrant, Orageux et Ténébreux.</li>
+<li><b>18 nouveaux monstres</b>, des boss redessinés et de nouveaux décors.</li>
+<li><b>Un familier de départ</b>, le lièvre cornu. Tous les costumes et tous les familiers sont débloqués, sauf ceux qui se gagnent par un Succès ou une mission.</li>
+<li><b>Voies de l'arbre</b>&nbsp;: le bouton «&nbsp;Voie&nbsp;» montre les prochains pas d'une des trois voies de ta classe.</li>
+<li><b>Proposer d'équiper</b>&nbsp;: une option (Paramètres, Combat) pour équiper un meilleur objet dès que tu le ramasses.</li>
+<li><b>Refuge et ateliers redessinés</b>&nbsp;; le coffre passe à 48 cases par onglet.</li>
+<li><b>Effets des attaques de zone</b> plus lisibles, avec un réglage «&nbsp;Flashs&nbsp;» pour les réduire.</li>
 </ul>
 <h4>Changements</h4>
 <ul>
-<li>Chevalier&nbsp;: plus solide (armure de classe, 12 de vie par niveau), la Charge te protège (−25&nbsp;% de dégâts reçus pendant 2 secondes), ses attaques de base sont renforcées (×1,3), le Tourbillon coûte 25 de Rage. Le Bond et la Charge te donnent 6 de Rage par ennemi touché (30 au plus)&nbsp;; le Tourbillon et la Tempête d'acier se relancent après 3 secondes, la Charge et la Traînée après 2,8&nbsp;; la Rage fond après 6 secondes sans combat, à 5 par seconde&nbsp;; un déplacement arme ton troisième coup (les Sabots du Marteleur en arment deux) et tu fais un petit pas vers ta cible en frappant. Rage froide&nbsp;: 30&nbsp;% de vie gardée pour +25&nbsp;% de dégâts (c'était 40&nbsp;% pour +5&nbsp;%). Contrepartie&nbsp;: tu meurs un peu plus aux paliers 30 à 40.</li>
-<li>Sorcière&nbsp;: 10 de vie par niveau (c'était 8)&nbsp;; la Nova de givre et la Brume glaciale couvrent 96 au lieu de 72, la Nova de foudre 112 au lieu de 90&nbsp;; Météore, Pluie de météores et Comète noire frappent plus fort et reviennent toutes les 7 secondes (c'était 8,5)&nbsp;; les traits de baguette éclatent&nbsp;; la Mana revient à 12 par seconde (c'était 9) et le coût des sorts monte de 3&nbsp;% par niveau de compétence au-delà de 12 (c'était 6&nbsp;%)&nbsp;; les traits portent plus loin (290 au lieu de 240), la visée automatique aussi (200 au lieu de 180) et son esquive passe de 10 à 15&nbsp;%&nbsp;; Ferveur et Calme de l'orage ne rendent plus tes compétences 10&nbsp;% plus chères.</li>
-<li>La Brûlure du Météore suit enfin ton coup&nbsp;: le sol brûle 30&nbsp;% du coup en 3 secondes (10&nbsp;% par seconde&nbsp;; 40&nbsp;% au deuxième palier), et le coup compte tes bonus, tes critiques et les combos. Avant, le sol ne comptait que les dégâts moyens de ton arme&nbsp;: tu voyais des «&nbsp;-35&nbsp;» minuscules sur des monstres enflammés (au niveau 59, un chiffre de 8 monte vers 130). Les autres zones de feu ne changent pas.</li>
-<li>Les élites sont tuables. Avant, certaines demandaient plus de 8 fois le temps d'une élite simple, et certaines ne mouraient plus. Trois règles&nbsp;: la régénération s'arrête 2 secondes après chaque coup ou brûlure&nbsp;; un monstre ne reçoit qu'un seul bouclier par 7 secondes, quel que soit le nombre de Protecteurs autour&nbsp;; Blindé et Protecteur ne sortent jamais ensemble. Le bouclier lui-même ne change pas (35&nbsp;% de la vie, 4 secondes). Visé&nbsp;: jamais plus de 2,5 fois le temps d'une élite simple (la pire était à 8,08).</li>
-<li>Le Taureau d'airain ne s'arrête plus&nbsp;: un étourdissement ou un gel ne coupe plus sa charge&nbsp;; pendant l'élan, il met l'élan en pause, puis il charge sur la ligne annoncée.</li>
-<li>Uniques du Traqueur réparés&nbsp;: la Bouche d'Ombre ouvre aussi son Abîme avec un troisième tir&nbsp;; la Cape de l'Embusqué lève le Rempart avec un tir de l'attaque de base, comme avec un coup de mêlée&nbsp;; l'Arc de Ronce annonce 5 saignements (le plus que la règle garde), pas 8. Le Traqueur reste un peu devant&nbsp;: son avance vient des rebonds de ses flèches.</li>
-<li>Runes&nbsp;: une rune qui ne va pas à une compétence est refusée, et ne compte plus dans la puissance affichée. La Chaîne ne fait rebondir ni la Volée ni la Pluie de braises (ce que disait déjà sa description).</li>
-<li>Forge&nbsp;: le prix de chaque niveau est fixe et prévisible. Au-delà de +15, une jauge de forge visible se remplit à chaque échec (un échec rend toujours la moitié du prix)&nbsp;; jauge pleine, la réussite est assurée. Jamais plus de 3 échecs de suite, jamais de recul. Défaire l'arbre de compétences ou l'arbre d'atlas coûte un prix qui suit le niveau de ton personnage.</li>
-<li>Le marchand est propre à chaque personnage&nbsp;: deux amis de la même classe ne voient plus le même étal.</li>
-<li>Expérience&nbsp;: gagnée en entier quel que soit l'écart de niveau&nbsp;; une mort en fait perdre 2&nbsp;%. Les niveaux 80 à 99 coûtent 40&nbsp;% de leur ancien prix. Après le niveau 100, une mort fait perdre 2&nbsp;% de la barre de gloire (5&nbsp;% avant).</li>
-<li>Les résistances sont mieux réparties&nbsp;: feu, froid et foudre pèsent à peu près pareil, l'ombre est plus rare (deux fois moins d'élites Ténébreuses et d'ombre sur les objets, sauf aux anneaux de la forge). La Cathédrale est le biome de la foudre&nbsp;; plusieurs meutes sont revues. Un biome change toujours le décor et les familles, pas la difficulté&nbsp;: elle ne dépend que du palier.</li>
-<li>Aucun message coupé&nbsp;: chaque texte des menus a été essayé dans sa boîte, en français et en anglais, à plusieurs tailles d'interface&nbsp;; ceux qui dépassaient sont raccourcis ou passent à la ligne.</li>
-<li>Le mot de difficulté (la flèche et le risque) est recalibré sur de vraies parties jouées par un robot&nbsp;; ses seuils seront ajustés après vos premières parties.</li>
-<li>L'Abîme et le palier 50 sont gardés tels quels&nbsp;: refaire des paliers plus bas doit suffire pour monter et t'équiper avant le boss. Dis-moi si ce n'est pas le cas.</li>
-<li>Un boss bloqué fait un saut annoncé, avec de faibles dégâts à l'arrivée.</li>
-<li>Plus de publicité, aucun minuteur, pas de missions du jour&nbsp;: comme avant.</li>
+<li><b>Chevalier</b>&nbsp;: plus résistant (12 de vie par niveau), attaques de base plus fortes (+30&nbsp;%). La Charge réduit de 25&nbsp;% les dégâts reçus pendant 2 secondes, le Bond et la Charge donnent de la Rage par ennemi touché, le Tourbillon coûte 25 de Rage.</li>
+<li><b>Sorcière</b>&nbsp;: 10 de vie par niveau (8 avant), Mana à 12 par seconde (9 avant), esquive à 15&nbsp;% (10&nbsp;% avant). Les Novas couvrent plus large&nbsp;; Météore, Pluie de météores et Comète noire frappent plus fort et reviennent en 7 secondes (8,5 avant). La Comète noire fait quatre fois plus de dégâts aux élites et aux boss.</li>
+<li><b>Brûlure du Météore</b>&nbsp;: le sol brûle 30&nbsp;% du coup en 3 secondes, critiques et combos compris.</li>
+<li><b>Élites</b>&nbsp;: la régénération s'interrompt 2 secondes après un coup, un monstre ne reçoit qu'un bouclier toutes les 7 secondes, et Blindé et Protecteur n'apparaissent plus ensemble.</li>
+<li><b>Forge</b>&nbsp;: le prix de chaque niveau est fixe. Au-delà de +15, une jauge se remplit à chaque échec et assure la réussite une fois pleine&nbsp;; un objet ne recule jamais.</li>
+<li><b>Expérience</b>&nbsp;: gagnée en entier quel que soit l'écart de niveau&nbsp;; une mort en coûte 2&nbsp;%. Les niveaux 80 à 99 demandent 60&nbsp;% d'expérience en moins.</li>
+<li><b>Résistances</b>&nbsp;: feu, froid et foudre pèsent autant&nbsp;; l'ombre est plus rare.</li>
+<li><b>Marchand</b>&nbsp;: son étal est propre à chaque personnage.</li>
+<li><b>Runes</b>&nbsp;: une rune qui ne va pas à une compétence est refusée.</li>
+<li><b>Sac</b>&nbsp;: chaque emplacement vide montre l'objet qu'il attend.</li>
+<li><b>Familiers</b>&nbsp;: le crapaud est remplacé par le lièvre cornu.</li>
+<li><b>Hors carte</b>, quand rien ne bouge, le jeu passe à 30 images par seconde pour moins chauffer.</li>
 </ul>
 <h4>Corrections</h4>
 <ul>
-<li>Des monstres pouvaient rester coincés plus de 10 secondes (porteurs de ruine, deux foules contre un mur, un golem contre un objet, une chauve-souris hors de la carte, une meute qui s'éveille)&nbsp;: c'est corrigé, et les bousculades sont deux fois moins longues.</li>
-<li>Dans le sac, un chiffre de puissance à six chiffres ne pousse plus les colonnes et ne rétrécit plus la fiche de l'objet.</li>
-<li>Des descriptions disaient autre chose que ce que fait le jeu (Pacte inversé, Ampleur, Charge)&nbsp;: elles sont justes, et «&nbsp;Protection&nbsp;» et «&nbsp;Blocage&nbsp;» sont expliqués dans le glossaire.</li>
-</ul>
-<h4>À savoir</h4>
-<ul>
-<li>Rien ne part de ton appareil tant que tu n'as rien allumé&nbsp;: le compte en ligne est éteint, les statistiques anonymes aussi (elles s'allument dans les Paramètres). «&nbsp;Signaler un problème&nbsp;» n'envoie rien tant que tu ne touches pas «&nbsp;Envoyer&nbsp;». Voir la page «&nbsp;Confidentialité&nbsp;».</li>
-<li>Pas encore essayé sur un vrai téléphone&nbsp;: la reprise automatique de ta partie de la 0.7.0 (elle marche en test, mais n'a jamais été jouée par-dessus une vraie 0.7.0 sur un téléphone), la reprise d'une carte après une fermeture par le téléphone, le coffre gardé, les nouveaux effets des attaques de zone et le réglage «&nbsp;Flashs réduits&nbsp;». Si quelque chose cloche, garde ta sauvegarde exportée et signale-le.</li>
-<li>Les vibrations ne marchent pas encore sur téléphone&nbsp;: le réglage existe, mais rien ne vibre pour l'instant.</li>
-<li>Fluidité&nbsp;: le jeu tient 60 images par seconde en moyenne sur trois téléphones Android essayés, mais un Pixel 5 peut saccader un peu dans les Cryptes. Dis-moi quel téléphone tu as si le jeu ne te paraît pas fluide.</li>
-<li>Les sons des sorts et des frappes seront retravaillés dans une prochaine version.</li>
-<li>La version Windows a été essayée sur Windows 11 seulement. Windows dira «&nbsp;éditeur inconnu&nbsp;» au premier lancement&nbsp;: le jeu n'est pas signé (un certificat est payant). Vérifie l'empreinte du fichier avant (page de téléchargement).</li>
-<li>Cette version est pour Android et Windows. Pas d'application iPhone.</li>
+<li>Des monstres restaient coincés contre un mur ou hors de la carte.</li>
+<li>Trois uniques du Traqueur (Bouche d'Ombre, Cape de l'Embusqué, Arc de Ronce) ne faisaient pas ce que dit leur description.</li>
+<li>Plusieurs descriptions étaient fausses (Pacte inversé, Ampleur, Charge).</li>
+<li>Des textes étaient coupés dans les menus.</li>
+<li>Dans le sac, une puissance à six chiffres déplaçait les colonnes.</li>
 </ul>
 </details>
 <h3 style="font-family:var(--f-display);font-weight:500;font-size:20px;margin:22px 0 10px;color:var(--bone)">Anciennes versions (application 0.7.0 et avant)</h3>
