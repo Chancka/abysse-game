@@ -90,7 +90,7 @@ section p { max-width: 68ch; }
       <h1>Abysse</h1>
     </div>
     <p class="tag">Un action-RPG en pixel art, sombre et sans pression. Descends palier après palier, trouve l'objet qui change tout.</p>
-    <p class="meta">Version de test 0.8.0 · <span>19 novembre 2026</span> · Android 8 ou plus récent (téléphone 64&nbsp;bits) · Windows</p>
+    <p class="meta">Version de test 0.8.0 · <span>19 novembre 2026</span> · Android 8 ou plus récent (téléphone 64&nbsp;bits) · Windows · navigateur sur ordinateur</p>
   </header>
 
   <section aria-labelledby="t-dl">
@@ -116,6 +116,15 @@ section p { max-width: 68ch; }
         <p class="meta">Empreinte SHA-256 de l'archive&nbsp;:</p>
         <p class="hash">37c84cc6e1273da123c5c53c7522ed446464c9026ded1c172dade0b8da0634b8</p>
       </div>
+      <div class="file">
+        <h3>Navigateur, sur ordinateur</h3>
+        <a class="btn" id="play-browser" href="play/">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+          Jouer dans le navigateur
+        </a>
+        <p class="meta">Rien à installer · environ 80&nbsp;Mo au premier chargement</p>
+        <p class="meta">Sur un ordinateur, avec un navigateur récent.</p>
+      </div>
       <p class="note">Les empreintes servent à vérifier que le fichier est bien celui de Charly et qu'il n'a pas été abîmé ou changé. Je te les redis aussi dans un message&nbsp;: si elles diffèrent, ne lance pas le jeu. Comment vérifier&nbsp;: <a href="#t-hash">plus bas</a>.</p>
     </div>
   </section>
@@ -138,7 +147,7 @@ section p { max-width: 68ch; }
       <li><div><p class="lead"><b>Ouvre le jeu</b>&nbsp;: tes personnages sont là, et le Refuge te dit ce qui a été repris.</p></div></li>
       <li><div><p class="lead"><b>S'ils n'y sont pas</b>&nbsp;: Paramètres, onglet Sauvegarde, «&nbsp;Importer une sauvegarde&nbsp;», et colle le texte de l'étape 1.</p></div></li>
     </ol>
-    <p class="note" style="margin-top:14px">Sur PC, ou si tu jouais dans le navigateur (téléphone compris)&nbsp;: la reprise n'est pas automatique. Exporte ta partie dans la <a href="play/">version du navigateur</a> (Options, «&nbsp;Exporter&nbsp;»), puis colle-la dans la 0.8.0 (Paramètres, onglet Sauvegarde, «&nbsp;Importer une sauvegarde&nbsp;»).</p>
+    <p class="note" style="margin-top:14px">Si tu jouais dans le navigateur sur un ordinateur&nbsp;: ouvre la <a href="play/">version du navigateur</a>, elle reprend ta partie toute seule. Pour l'emporter dans l'application Windows ou Android&nbsp;: la section «&nbsp;<a href="#t-browser">La version du navigateur</a>&nbsp;», plus bas, te donne ta partie à copier, à coller ensuite dans l'application (Paramètres, onglet Sauvegarde, «&nbsp;Importer une sauvegarde&nbsp;»).</p>
   </section>
 
   <section aria-labelledby="t-install">
@@ -177,7 +186,7 @@ section p { max-width: 68ch; }
 
   <section aria-labelledby="t-browser">
     <h2 id="t-browser">La version du navigateur</h2>
-    <p class="note">La 0.8.0 ne se joue pas dans le navigateur. La <a href="play/">version du navigateur</a> reste en ligne pour l'instant, mais c'est l'<b>ancienne 0.7.0</b>, figée&nbsp;: elle ne recevra plus rien, et sa partie est séparée de celle de la 0.8.0. Utilise-la surtout pour exporter ta partie.</p>
+    <p class="note">La 0.8.0 se joue dans le navigateur <b>sur un ordinateur</b>&nbsp;: <a href="play/">jouer</a>. Elle reprend toute seule une partie de la 0.7.0 jouée dans ce navigateur, et «&nbsp;Continuer avec Google&nbsp;» y retrouve ta partie en ligne. Sans compte, ta partie est gardée par ce navigateur, sur cet ordinateur&nbsp;: exporte-la de temps en temps. Sur un téléphone, la même adresse ouvre encore l'<b>ancienne 0.7.0</b>, figée.</p>
     <div id="saved" hidden>
       <p class="lead">Une partie jouée dans ce navigateur est gardée sur cet appareil. Tu peux l'emporter dans la 0.8.0&nbsp;:</p>
       <p><button type="button" class="btn btn-alt" id="save-copy">Copier ma partie</button> <button type="button" class="btn btn-alt" id="save-file">Télécharger le fichier</button></p>
@@ -221,7 +230,7 @@ section p { max-width: 68ch; }
 <p class="brief">Abysse devient une vraie application, pour Android et pour Windows. Trois nouveaux boss, un coffre gardé dans chaque carte, la manette, une sauvegarde en ligne facultative, et des combats revus pour le Chevalier et la Sorcière. Sur Android, installe-la par-dessus la 0.7.0 sans la désinstaller&nbsp;: ta partie est reprise.</p>
 <h4>Nouveautés</h4>
 <ul>
-<li><b>Android et Windows</b>&nbsp;: une application Android refaite et une première version Windows. La 0.8.0 ne se joue pas dans le navigateur.</li>
+<li><b>Android, Windows et navigateur</b>&nbsp;: une application Android refaite, une première version Windows et, depuis le 20 novembre, le jeu dans le navigateur sur ordinateur.</li>
 <li><b>Trois nouveaux boss</b>&nbsp;: l'Éteigneuse, la Lamproie de la citerne et le Taureau d'airain. Le jeu en compte huit, et chaque nouveau boss a son objet unique.</li>
 <li><b>Un coffre gardé dans chaque carte</b>, à la place des petits coffres au hasard.</li>
 <li><b>Manette</b>&nbsp;: tout le jeu se joue à la manette, et les boutons affichés suivent celle que tu tiens.</li>
